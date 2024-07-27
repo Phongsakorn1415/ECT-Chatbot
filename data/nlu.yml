@@ -16,6 +16,25 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - ไง
+    - สวัสดี
+    - ดี
+    - ว่าไง
+    - อรุณสวัสดิ์
+    - สายัณห์สวัสดิ์
+    - รุนหวัด
+    - ราตรีสวัสดิ์
+    - ทิวาสวัสดิ์
+    - ดีจ้า
+    - สวัสดีตอนเช้า
+    - สวัสดีตอนบ่าย
+    - สวัสดีตอนเย็น
+    - สวัสดีตอนมืด
+    - สวัสดีตอนค่ำ
+    - หวัดดี
+    - ดีจ๊ะ
+    - สวัสดีครับ
+    - สวัสดีค่ะ
 
 - intent: goodbye
   examples: |
@@ -29,6 +48,14 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - ลาก่อน
+    - บาย
+    - บุย
+    - ไว้เจอกัน
+    - ลาก่อย
+    - ขอบคุณครับ
+    - ขอบคุณค่ะ
+    - ไปล่ะ
 
 - intent: affirm
   examples: |
@@ -38,6 +65,14 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - ใช่
+    - แน่นอน
+    - เห็นด้วย
+    - ใช่เลย
+    - ใช่แล้ว
+    - ช่าย
+    - อืม
+    - ถูก
 
 - intent: deny
   examples: |
@@ -48,44 +83,11 @@ nlu:
     - don't like that
     - no way
     - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - ไม่
+    - ไม่เคย
+    - ไม่อ่ะ
+    - ไม่มีทาง
+    - ไม่ใช่
+    - ผิด
+    - ม่าย
+    - โน
