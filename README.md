@@ -19,14 +19,14 @@ How to install RASA
 
             pip3 install rasa
 
-  If you want to know more about RASA. Use this link : https://rasa.com/docs/rasa/
+  If you want to know more about RASA. Click this link : https://rasa.com/docs/rasa/
   
 How to install pythainlp
   Use the command below to install pythainlp
 
-            pip3 install pythainlp
+            pip install pythainlp
 
 How to install spacy
   Use the command below to install spacy
 
-            pip3 install spacy
+            pip install spacy
