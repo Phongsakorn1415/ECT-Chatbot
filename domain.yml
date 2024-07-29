@@ -5,6 +5,7 @@ intents:
   - goodbye
   - affirm
   - deny
+  - ask_term_price_all
 
 responses:
   utter_greet:
@@ -12,6 +13,9 @@ responses:
 
   utter_goodbye:
   - text: "ยินดีที่ได้ช่วยค่ะ"
+
+actions:
+  - action_term_price_all
 
 session_config:
   session_expiration_time: 60

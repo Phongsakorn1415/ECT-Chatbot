@@ -1,4 +1,4 @@
-to make this project work you have to install
+to make this project work you have to install (Windows)
 - python 3.10
 - Virtual Environment (optional)
 - RASA

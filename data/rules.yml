@@ -11,3 +11,8 @@ rules:
   steps:
   - intent: greet
   - action: utter_greet
+
+- rule: Tell All Term Price
+  steps:
+  - intent: ask_term_price_all
+  - action: action_term_price_all
