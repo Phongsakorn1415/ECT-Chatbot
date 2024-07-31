@@ -16,3 +16,13 @@ rules:
   steps:
   - intent: ask_term_price_all
   - action: action_term_price_all
+
+- rule: Tell One Term Price
+  steps:
+  - intent: ask_term_price_one
+  - action: action_term_price_one
+
+- rule: Tell Late Fees
+  steps:
+  - intent: ask_term_late_fees
+  - action: action_term_late_fees

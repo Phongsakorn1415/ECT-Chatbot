@@ -6,6 +6,27 @@ intents:
   - affirm
   - deny
   - ask_term_price_all
+  - ask_term_price_one
+  - ask_term_late_fees
+
+entities:
+  - year
+  - term
+
+slots:
+  educationYear:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: year
+
+  educationTerm:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: term
 
 responses:
   utter_greet:
@@ -16,6 +37,8 @@ responses:
 
 actions:
   - action_term_price_all
+  - action_term_price_one
+  - action_term_late_fees
 
 session_config:
   session_expiration_time: 60
