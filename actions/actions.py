@@ -76,13 +76,19 @@ class ActionAllTermPrice(Action):
 
         try:
             mycursor = conn.cursor()
-            sql = "SELECT * FROM educationfee"
+            sql = """
+            SELECT course_year.year,education_year.year,education_year.term,educationfee.price,educationfee.per,educationfee.detail FROM educationfee
+            INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
+            INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
+            WHERE course_year.year = '2565' 
+            ORDER BY education_year.year,education_year.term"""
             mycursor.execute(sql) 
             results = mycursor.fetchall()
-            respon = ""
+            respon = "หลักสูตรปี "+ str(results[0][0]) +"\n"
+            lastrespon = ""
             for x in results:
                 if x[1] == 0:
-                    lastrespon = "ค่าปรับลงทะเบียนเรียนช้า " + str(x[3]) + " บาทต่อ" + x[4] + str(x[5])
+                    lastrespon = "ค่าปรับลงทะเบียนเรียนช้า " + str(x[3]) + " บาทต่อ" + x[4] + " " + str(x[5])
                 else:
                     respon = respon + "ปีที่ " + str(x[1]) + " เทอมที่ " + str(x[2]) + " ค่าเทอม " + str(x[3]) + " บาท\n"
             
@@ -90,7 +96,8 @@ class ActionAllTermPrice(Action):
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            dispatcher.utter_message(text = str(e))
 
         return []
     
@@ -126,10 +133,13 @@ class ActionOneTermPrice(Action):
             term = termCheck[thaispellcheck.check(tracker.get_slot("educationTerm"),autocorrect=True)]
             
             mycursor = conn.cursor()
-            sql = "SELECT * FROM educationfee WHERE year = '%s' AND term = '%s'"%(year,term)
+            sql = """SELECT education_year.year,education_year.term,educationfee.price,educationfee.detail FROM educationfee
+            INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
+            INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
+            WHERE course_year.year = '2565' AND education_year.year = '%s' AND education_year.term = '%s'"""%(year,term)
             mycursor.execute(sql) 
             results = mycursor.fetchall()
-            respon = "ปี " + str(results[0][1]) + " เทอม " + str(results[0][2]) + " ค่าเทอม " + str(results[0][3]) + " บาท \nโดยแบ่งเป็น\n" + results[0][5]
+            respon = "ปี " + str(results[0][0]) + " เทอม " + str(results[0][1]) + " ค่าเทอม " + str(results[0][2]) + " บาท \nโดยแบ่งเป็น\n" + results[0][3]
 
             dispatcher.utter_message(text = respon)
 
@@ -150,13 +160,17 @@ class ActionLateFees(Action):
 
         try:
             mycursor = conn.cursor()
-            sql = "SELECT * FROM educationfee WHERE year = '0'"
+            sql = """SELECT educationfee.price,educationfee.per,educationfee.detail FROM educationfee
+            INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
+            INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
+            WHERE course_year.year = '2565' AND education_year.year = '0' AND education_year.term = '0'"""
             mycursor.execute(sql) 
             results = mycursor.fetchall()
-            respon = "ค่าปรับลงทะเบียนเรียนช้า " + str(results[0][3]) + " บาทต่อ" + results[0][4] + results[0][5]
+            respon = "ค่าปรับลงทะเบียนเรียนช้า " + str(results[0][0]) + " บาทต่อ" + results[0][1] + " " + results[0][2]
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            dispatcher.utter_message(text = str(e))
 
         return []
