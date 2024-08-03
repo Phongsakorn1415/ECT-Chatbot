@@ -12,6 +12,7 @@ intents:
 entities:
   - year
   - term
+  - course_year
 
 slots:
   educationYear:
@@ -27,6 +28,13 @@ slots:
     mappings:
       - type: from_entity
         entity: term
+
+  courseYear:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: course_year
 
 responses:
   utter_greet:

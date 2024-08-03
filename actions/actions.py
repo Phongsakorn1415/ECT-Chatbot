@@ -26,31 +26,6 @@
 #
 #         return []
 
-
-# def dataFetch(command):
-#     myDB=mysql.connector.conect(
-#         host="localhost", 
-#         user="root", 
-#         passwd="", 
-#         database="ect_chatbot"
-#     )
-
-#     mycursor = mydb.cursor() 
-#     sql = command
-
-#     try:
-#         #Execute the SQL Query
-#         mycursor.execute(sql) 
-#         results = mycursor.fetchall()
-
-#         UserName = results[0][0]
-#         UserEmail = results[0][2]
-
-#         #Now print fetched data
-#         dispatcher.utter_message(f"User Name: {UserName}, User Email: {UserEmail}")
-
-#     except:
-#         dispatcher.utter_message("Error : Unable to fetch data.")
 import mysql.connector
 import thaispellcheck
 from typing import Any, Text, Dict, List
@@ -74,21 +49,44 @@ class ActionAllTermPrice(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        courseYear = next(tracker.get_latest_entity_values("course_year"), None)
         try:
+            if not courseYear:
+                mycursor = conn.cursor()
+                sql = "SELECT * FROM course_year ORDER BY year"
+                mycursor.execute(sql) 
+                results = mycursor.fetchall()
+                if mycursor.rowcount > 1:
+                    buttons = []
+                    for x in results:
+                        title = f"{x[1]}"
+                        payload = '/ask_term_price_all{"course_year": "' + str(x[1]) + '"}'
+                        buttons.append({"title": title, "payload": payload})
+                    dispatcher.utter_message(text="กรุณาเลือกปีของหลักสูตร:", buttons=buttons)
+                    return []
+            
+                else:
+                    for x in results:
+                        courseYear = x[1]
+                mycursor.close()
+
+        
             mycursor = conn.cursor()
             sql = """
             SELECT course_year.year,education_year.year,education_year.term,educationfee.price,educationfee.per,educationfee.detail FROM educationfee
             INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
             INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
-            WHERE course_year.year = '2565' 
+            WHERE course_year.year = %s 
             ORDER BY education_year.year,education_year.term"""
-            mycursor.execute(sql) 
+            mycursor.execute(sql,(courseYear,)) 
             results = mycursor.fetchall()
             respon = "หลักสูตรปี "+ str(results[0][0]) +"\n"
             lastrespon = ""
             for x in results:
                 if x[1] == 0:
                     lastrespon = "ค่าปรับลงทะเบียนเรียนช้า " + str(x[3]) + " บาทต่อ" + x[4] + " " + str(x[5])
+                elif x[2] == 3:
+                    respon = respon + "ปีที่ " + str(x[1]) + " ซัมเมอร์ ค่าเทอม " + str(x[3]) + " บาท\n"
                 else:
                     respon = respon + "ปีที่ " + str(x[1]) + " เทอมที่ " + str(x[2]) + " ค่าเทอม " + str(x[3]) + " บาท\n"
             
@@ -129,8 +127,8 @@ class ActionOneTermPrice(Action):
         }
 
         try:
-            year = yearCheck[thaispellcheck.check(tracker.get_slot("educationYear"),autocorrect=True)]
-            term = termCheck[thaispellcheck.check(tracker.get_slot("educationTerm"),autocorrect=True)]
+            year = yearCheck[next(tracker.get_latest_entity_values("year"), None)]
+            term = termCheck[next(tracker.get_latest_entity_values("term"), None)]
             
             mycursor = conn.cursor()
             sql = """SELECT education_year.year,education_year.term,educationfee.price,educationfee.detail FROM educationfee
