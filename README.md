@@ -30,3 +30,9 @@ How to install spacy
   Use the command below to install spacy
 
             pip install spacy
+
+Rasa-webchat : https://github.com/botfront/rasa-webchat
+
+How to Make SocketIO work when use with rasa-webchat
+  go to socketio.py file in "...\venv\Lib\site-packages\rasa\core\channels\" directory
+  find "sio.enter_room(sid, data["session_id"])" line and add "await" at the front of line. like this "await sio.enter_room(sid, data["session_id"])"

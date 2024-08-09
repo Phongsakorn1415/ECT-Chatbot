@@ -112,6 +112,8 @@ nlu:
     - ค่าลงทะเบียนเรียน หลักสูตรปี [1234](course_year)
     - ค่าเรียนปี [1234](course_year)
     - ค่าเล่าเรียนปี [1234](course_year)
+    - ค่าเทอมปี [1234](course_year)
+    - ค่าลงทะเบียนเรียนปี[1234](course_year)
 
 - regex: course_year
   examples: |
