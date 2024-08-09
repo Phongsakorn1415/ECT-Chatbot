@@ -194,7 +194,7 @@ class ActionOneTermPrice(Action):
             sql = """SELECT education_year.year,education_year.term,educationfee.price,educationfee.detail FROM educationfee
             INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
             INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
-            WHERE course_year.year = '2565' AND education_year.year = '%s' AND education_year.term = '%s'"""
+            WHERE course_year.year = '2565' AND education_year.year = %s AND education_year.term = %s"""
             mycursor.execute(sql,(year,term,)) 
             results = mycursor.fetchall()
             respon = "ปี " + str(results[0][0]) + " เทอม " + str(results[0][1]) + " ค่าเทอม " + str(results[0][2]) + " บาท \nโดยแบ่งเป็น\n" + results[0][3]
