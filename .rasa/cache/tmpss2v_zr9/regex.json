@@ -1,0 +1,14 @@
+[
+  {
+    "name": "course_year",
+    "pattern": "\\d{4}"
+  },
+  {
+    "name": "term",
+    "pattern": "\\b(1|2|หนึ่ง|สอง|ซัมเมอร์|ซัมเมอ|summer|Summer)"
+  },
+  {
+    "name": "year",
+    "pattern": "\\b(1|2|3|4|หนึ่ง|สอง|สาม|สี่)\\b"
+  }
+]
