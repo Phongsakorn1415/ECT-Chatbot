@@ -174,3 +174,27 @@ class ActionLateFees(Action):
             dispatcher.utter_message(text = str(e))
 
         return []
+    
+class ActionTeacherAll(Action):
+    
+    def name(self) -> Text:
+        return "action_teacher_all"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        try:
+            mycursor = conn.cursor()
+            sql = """SELECT name,lastname FROM user WHERE role = 't' ORDER BY name"""
+            mycursor.execute(sql) 
+            results = mycursor.fetchall()
+            respon = "อาจารย์  \n"
+            for x in results:
+                respon = respon + x[0] + " " + x[1] + "  \n"
+            
+            dispatcher.utter_message(text = respon)
+            return []
+        
+        except Exception as e:
+            dispatcher.utter_message(text = str(e))
