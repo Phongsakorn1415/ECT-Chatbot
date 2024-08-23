@@ -9,10 +9,12 @@ intents:
   - ask_term_price_one
   - ask_term_late_fees
   - ask_teacher_all
+  - ask_teacher_contact
 
 entities:
   - year
   - term
+  - tname
 
 slots:
   educationYear:
@@ -29,6 +31,13 @@ slots:
       - type: from_entity
         entity: term
 
+  teacherName:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: tname
+
 responses:
   utter_greet:
   - text: "สวัสดีค่ะ ต้องการสอบถามเรื่องอะไรคะ"
@@ -41,6 +50,7 @@ actions:
   - action_term_price_one
   - action_term_late_fees
   - action_teacher_all
+  - action_teacher_contact
 
 session_config:
   session_expiration_time: 60

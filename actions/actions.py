@@ -51,9 +51,10 @@
 
 #     except:
 #         dispatcher.utter_message("Error : Unable to fetch data.")
+from rasa_sdk.types import DomainDict
 import mysql.connector
 import thaispellcheck
-from typing import Any, Text, Dict, List
+from typing import Any, Coroutine, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
@@ -194,7 +195,52 @@ class ActionTeacherAll(Action):
                 respon = respon + x[0] + " " + x[1] + "  \n"
             
             dispatcher.utter_message(text = respon)
-            return []
         
         except Exception as e:
             dispatcher.utter_message(text = str(e))
+
+        return []
+
+class ActionTeacherContact(Action):
+    
+    def name(self) -> Text:
+        return "action_teacher_contact"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        tname = tracker.get_slot("teacherName")
+
+        try:
+            mycursor = conn.cursor()
+            sql = """SELECT contact_type.type_name,contact.detail,user.title FROM contact
+            INNER JOIN user ON (contact.user_id = user.id)
+            INNER JOIN contact_type ON (contact.contact_type_id = contact_type.id)
+            WHERE user.name = %s AND user.role = 't' ORDER BY contact_type.id"""
+            mycursor.execute(sql,(tname,))
+            results = mycursor.fetchall()
+            if mycursor.rowcount < 1:
+                respon = f"อาจารย์ {tname} ไม่มีข้อมูลช่องทางติดต่อ"
+                dispatcher.utter_message(text = respon)
+                return []
+            
+            ctype = []
+            for x in results:
+                if x[0] not in results:
+                    ctype.append(x[0])
+
+            respon = f"นี่คือข้อมูลติดต่อของ {results[0][2]}{tname} ค่ะ  \n"
+            for x in ctype:
+                respon = respon + x + " :  \n"
+                for y in results:
+                    if y[0] == x:
+                        respon = respon + f" - {y[1]}"
+                if x != ctype[len(results) - 1]:
+                    respon = respon + "  \n  \n"
+            dispatcher.utter_message(text = respon)
+
+        except Exception as e:
+            dispatcher.utter_message(text = str(e))
+
+        return []

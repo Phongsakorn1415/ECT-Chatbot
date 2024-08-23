@@ -31,3 +31,8 @@ rules:
   steps:
   - intent: ask_teacher_all
   - action: action_teacher_all
+
+- rule: Tell Teacher Contact
+  steps:
+  - intent: ask_teacher_contact
+  - action: action_teacher_contact
