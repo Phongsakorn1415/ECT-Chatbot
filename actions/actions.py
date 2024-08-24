@@ -230,14 +230,14 @@ class ActionTeacherContact(Action):
                 if x[0] not in results:
                     ctype.append(x[0])
 
-            respon = f"นี่คือข้อมูลติดต่อของ {results[0][2]}{tname} ค่ะ  \n"
+            respon = f"นี่คือข้อมูลติดต่อของ {results[0][2]}{tname} ค่ะ  \n\n"
             for x in ctype:
-                respon = respon + x + " :  \n"
+                respon = respon + x + "  \n"
                 for y in results:
                     if y[0] == x:
                         respon = respon + f" - {y[1]}"
-                if x != ctype[len(results) - 1]:
-                    respon = respon + "  \n  \n"
+                    if y == results[len(results) - 1]:
+                        respon = respon + "  \n\n"
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
