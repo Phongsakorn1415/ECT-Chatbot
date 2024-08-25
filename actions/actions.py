@@ -85,13 +85,13 @@ class ActionAllTermPrice(Action):
             ORDER BY education_year.year,education_year.term"""
             mycursor.execute(sql) 
             results = mycursor.fetchall()
-            respon = "หลักสูตรปี "+ str(results[0][0]) +"\n"
+            respon = "หลักสูตรปี "+ str(results[0][0]) +"  \n"
             lastrespon = ""
             for x in results:
                 if x[1] == 0:
                     lastrespon = "ค่าปรับลงทะเบียนเรียนช้า " + str(x[3]) + " บาทต่อ" + x[4] + " " + str(x[5])
                 else:
-                    respon = respon + "ปีที่ " + str(x[1]) + " เทอมที่ " + str(x[2]) + " ค่าเทอม " + str(x[3]) + " บาท\n"
+                    respon = respon + "ปีที่ " + str(x[1]) + " เทอมที่ " + str(x[2]) + " ค่าเทอม " + str(x[3]) + " บาท  \n"
             
             respon += lastrespon
             dispatcher.utter_message(text = respon)
@@ -140,7 +140,7 @@ class ActionOneTermPrice(Action):
             WHERE course_year.year = '2565' AND education_year.year = '%s' AND education_year.term = '%s'"""%(year,term)
             mycursor.execute(sql) 
             results = mycursor.fetchall()
-            respon = "ปี " + str(results[0][0]) + " เทอม " + str(results[0][1]) + " ค่าเทอม " + str(results[0][2]) + " บาท \nโดยแบ่งเป็น\n" + results[0][3]
+            respon = "ปี " + str(results[0][0]) + " เทอม " + str(results[0][1]) + " ค่าเทอม " + str(results[0][2]) + " บาท  \nโดยแบ่งเป็น  \n" + results[0][3].replace("\n","  \n")
 
             dispatcher.utter_message(text = respon)
 
