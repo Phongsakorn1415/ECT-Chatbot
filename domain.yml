@@ -51,6 +51,7 @@ actions:
   - action_term_late_fees
   - action_teacher_all
   - action_teacher_contact
+  - action_teacher_teach
 
 session_config:
   session_expiration_time: 60

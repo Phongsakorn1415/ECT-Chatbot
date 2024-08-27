@@ -244,3 +244,38 @@ class ActionTeacherContact(Action):
             dispatcher.utter_message(text = str(e))
 
         return []
+    
+class ActionTeacherTeach(Action):
+
+    def name(self) -> Text:
+        return "action_teacher_teach"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        tname = next(tracker.get_latest_entity_values("tname"), None)
+
+        try:
+            mycursor = conn.cursor()
+            sql = """SELECT subject.id,subject.name FROM teach
+            INNER JOIN user ON (teach.user_id = user.id)
+            INNER JOIN subject ON (teach.subject_id = subject.id)
+            WHERE user.name = %s AND user.role = 't' ORDER BY subject.id"""
+            mycursor.execute(sql,(tname,))
+            results = mycursor.fetchall()
+            if mycursor.rowcount < 1:
+                respon = f"อาจารย์ {tname} ไม่มีข้อมูลชวิชาที่สอน"
+                dispatcher.utter_message(text = respon)
+                return []
+            
+            respon = f"นี่คือวิชาทั้งหมดที่อาจารย์ {tname} สอนค่ะ  \n"
+            for x in results:
+                respon += "รหัสวิชา : " + x[0] + "  \n" + x[1] + "  \n  \n"
+            dispatcher.utter_message(text = respon)
+
+        except Exception as e:
+            dispatcher.utter_message(text = str(e))
+
+        return []
+
