@@ -130,8 +130,8 @@ class ActionOneTermPrice(Action):
         }
 
         try:
-            year = yearCheck[thaispellcheck.check(tracker.get_slot("educationYear"),autocorrect=True)]
-            term = termCheck[thaispellcheck.check(tracker.get_slot("educationTerm"),autocorrect=True)]
+            year = yearCheck[next(tracker.get_latest_entity_values("year"), None)]
+            term = termCheck[next(tracker.get_latest_entity_values("term"), None)]
             
             mycursor = conn.cursor()
             sql = """SELECT education_year.year,education_year.term,educationfee.price,educationfee.detail FROM educationfee
@@ -210,7 +210,7 @@ class ActionTeacherContact(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        tname = tracker.get_slot("teacherName")
+        tname = next(tracker.get_latest_entity_values("tname"), None)
 
         try:
             mycursor = conn.cursor()
