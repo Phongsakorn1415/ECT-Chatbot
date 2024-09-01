@@ -271,7 +271,7 @@ class ActionTeacherTeach(Action):
             
             respon = f"นี่คือวิชาทั้งหมดที่อาจารย์ {tname} สอนค่ะ  \n"
             for x in results:
-                respon += "รหัสวิชา : " + x[0] + "  \n" + x[1] + "  \n  \n"
+                respon += "รหัสวิชา : " + str(x[0]) + "  \n" + x[1] + "  \n  \n"
             dispatcher.utter_message(text = respon)
 
         except Exception as e:

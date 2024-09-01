@@ -1,1 +1,1 @@
-cmd /k ..\venv\Scripts\activate ^& rasa train ^& exit
+cmd /k ..\venv\Scripts\activate ^& rasa train ^& pause ^& exit

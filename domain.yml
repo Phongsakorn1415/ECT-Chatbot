@@ -10,6 +10,7 @@ intents:
   - ask_term_late_fees
   - ask_teacher_all
   - ask_teacher_contact
+  - ask_teacher_teach
 
 entities:
   - year
@@ -44,6 +45,9 @@ responses:
 
   utter_goodbye:
   - text: "ยินดีที่ได้ช่วยค่ะ"
+
+  utter_fallback:
+  - text: "ขออภัยค่ะ สิ่งที่คุณพิมพ์มาเราไม่สามารถตอบได้ กรุณาพิมพ์ใหม่ได้ไหมคะ"
 
 actions:
   - action_term_price_all

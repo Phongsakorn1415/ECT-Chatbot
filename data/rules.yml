@@ -41,3 +41,8 @@ rules:
   steps:
   - intent: ask_teacher_teach
   - action: action_teacher_teach
+
+- rule: Fall Back
+  steps:
+  - intent: nlu_fallback
+  - action: utter_fallback
