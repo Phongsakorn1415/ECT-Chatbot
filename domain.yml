@@ -11,6 +11,7 @@ intents:
   - ask_teacher_all
   - ask_teacher_contact
   - ask_teacher_teach
+  - out_of_scope
 
 entities:
   - year

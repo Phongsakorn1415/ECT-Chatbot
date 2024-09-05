@@ -201,3 +201,15 @@ nlu:
   examples: |
     - พลกฤษณ์
     - พงศกร
+
+- intent: out_of_scope
+  examples: |
+    - [1](year)+[1](term) ได้เท่าไหร่
+    - [2](year) + [2](term) =
+    - [2](year)+[หนึ่ง](term)
+    - [1](year)-[1](term) ได้เท่าไหร่
+    - [2](year) - [2](term) =
+    - [2](year)-[หนึ่ง](term)
+    - [1](year)*[1](term) ได้เท่าไหร่
+    - [2](year) * [2](term) =
+    - [2](year)*[หนึ่ง](term)
