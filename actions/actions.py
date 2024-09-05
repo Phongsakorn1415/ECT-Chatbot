@@ -279,3 +279,34 @@ class ActionTeacherTeach(Action):
 
         return []
 
+class ActionFallBack(Action):
+    
+    def name(self) -> Text:
+        return "action_fallback"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        userMessage = tracker.latest_message.get('text')
+
+        try:
+            mycursor = conn.cursor()
+            sql = "SELECT id FROM fallback_message WHERE message = %s"
+            mycursor.execute(sql,(userMessage,))
+            results = mycursor.fetchone()
+            if(mycursor.rowcount < 1):
+                sql = "INSERT INTO fallback_message (message, date, count) VALUES (%s, now(), 1)"
+                mycursor.execute(sql,(userMessage,))
+                conn.commit()
+            else:
+                sql = "UPDATE fallback_message SET count = count + 1 WHERE id = %s"
+                mycursor.execute(sql,(results[0],))
+                conn.commit()
+
+            dispatcher.utter_message(text = "ขออภัยค่ะ ฉันไม่สามารถตอบคำถามของคุณได้  \nหากพิมพ์ผิด กรุณาพิมพ์ใหม่ได้ไหมคะ")
+            return []
+        except Exception as e:
+            # dispatcher.utter_message(text = "ขออภัยค่ะ ฉันไม่สามารถตอบคำถามของคุณได้  \nหากพิมพ์ผิด กรุณาพิมพ์ใหม่ได้ไหมคะ")
+            dispatcher.utter_message(text = str(e))
+            return []

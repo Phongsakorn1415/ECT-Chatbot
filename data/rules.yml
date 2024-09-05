@@ -45,9 +45,9 @@ rules:
 - rule: Fall Back
   steps:
   - intent: nlu_fallback
-  - action: utter_fallback
+  - action: action_fallback
 
 - rule: Fall Back out of scope
   steps:
   - intent: out_of_scope
-  - action: utter_fallback
+  - action: action_fallback
