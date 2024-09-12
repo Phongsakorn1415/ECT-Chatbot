@@ -42,6 +42,11 @@ rules:
   - intent: ask_teacher_teach
   - action: action_teacher_teach
 
+- rule: Tell all Required Subject
+  steps:
+  - intent: ask_required_subject
+  - action: action_required_subject
+
 - rule: Fall Back
   steps:
   - intent: nlu_fallback

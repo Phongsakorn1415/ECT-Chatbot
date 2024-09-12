@@ -11,6 +11,7 @@ intents:
   - ask_teacher_all
   - ask_teacher_contact
   - ask_teacher_teach
+  - ask_required_subject
   - out_of_scope
 
 entities:
@@ -57,6 +58,7 @@ actions:
   - action_teacher_all
   - action_teacher_contact
   - action_teacher_teach
+  - action_required_subject
   - action_fallback
 
 session_config:

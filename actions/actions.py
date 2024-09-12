@@ -279,6 +279,43 @@ class ActionTeacherTeach(Action):
 
         return []
 
+class ActionRequiredSubject(Action):
+    
+    def name(self) -> Text:
+        return "action_required_subject"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        try:
+            mycursor = conn.cursor()
+            sql = """SELECT education_year.year,education_year.term,subject.id,subject.name FROM subject
+                INNER JOIN education_year ON (subject.education_year_id = education_year.id)
+                INNER JOIN course_year ON (subject.course_year_id = course_year.id)
+                WHERE course_year = 2565"""
+            mycursor.execute(sql)
+            results = mycursor.fetchall()
+
+            eyear = []
+            for x in results:
+                if [x[0],x[1]] not in eyear:
+                    eyear.append([x[0],x[1]])
+        
+            respon = ""
+            for x in eyear:
+                respon += f"ปี {x[0]} เทอม {x[1]}  \n"
+                for y in results:
+                    if [y[0], y[1]] == x:
+                        respon += f"รหัสวิชา {y[2]}  \n{y[3]}  \n  \n"
+                respon += "  \n\n"
+            dispatcher.utter_message(text = respon)
+
+        except Exception as e:
+            dispatcher.utter_message(text = str(e))
+            
+            
+
 class ActionFallBack(Action):
     
     def name(self) -> Text:

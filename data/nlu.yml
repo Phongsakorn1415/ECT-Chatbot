@@ -202,6 +202,13 @@ nlu:
     - พลกฤษณ์
     - พงศกร
 
+- intent: ask_required_subject
+  examples: |
+    - วิชาบังคับ
+    - วิชาที่บังคับทั้งหมด
+    - วิชาที่เรียน
+    - วิชาที่ต้องเรียน
+
 - intent: out_of_scope
   examples: |
     - [1](year)+[1](term) ได้เท่าไหร่
