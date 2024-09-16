@@ -293,7 +293,7 @@ class ActionRequiredSubject(Action):
             sql = """SELECT education_year.year,education_year.term,subject.id,subject.name FROM subject
                 INNER JOIN education_year ON (subject.education_year_id = education_year.id)
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
-                WHERE course_year = 2565"""
+                WHERE course_year.year = '2565' AND subject.isRequire = '1'"""
             mycursor.execute(sql)
             results = mycursor.fetchall()
 
@@ -312,7 +312,7 @@ class ActionRequiredSubject(Action):
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            dispatcher.utter_message(text = str(e))
+            dispatcher.utter_message(text = "action_required_subject\n" + str(e))
             
             
 

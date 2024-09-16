@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-term",
+      "2": "I-term",
+      "3": "L-term",
+      "4": "U-term",
+      "5": "B-tname",
+      "6": "I-tname",
+      "7": "L-tname",
+      "8": "U-tname",
+      "9": "B-year",
+      "10": "I-year",
+      "11": "L-year",
+      "12": "U-year",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-term": 1,
+      "I-term": 2,
+      "L-term": 3,
+      "U-term": 4,
+      "B-tname": 5,
+      "I-tname": 6,
+      "L-tname": 7,
+      "U-tname": 8,
+      "B-year": 9,
+      "I-year": 10,
+      "L-year": 11,
+      "U-year": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]
