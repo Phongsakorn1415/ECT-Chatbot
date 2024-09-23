@@ -290,8 +290,7 @@ class ActionRequiredSubject(Action):
         
         try:
             mycursor = conn.cursor()
-            sql = """SELECT education_year.year,education_year.term,subject.id,subject.name FROM subject
-                INNER JOIN education_year ON (subject.education_year_id = education_year.id)
+            sql = """SELECT subject.id,subject.name FROM subject
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
                 WHERE course_year.year = '2565' AND subject.isRequire = '1'"""
             mycursor.execute(sql)
@@ -307,14 +306,44 @@ class ActionRequiredSubject(Action):
                 respon += f"ปี {x[0]} เทอม {x[1]}  \n"
                 for y in results:
                     if [y[0], y[1]] == x:
-                        respon += f"รหัสวิชา {y[2]}  \n{y[3]}  \n  \n"
+                        respon += f"รหัสวิชา {y[2]}  \n   {y[3]}  \n  \n"
                 respon += "  \n\n"
+
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
             dispatcher.utter_message(text = "action_required_subject\n" + str(e))
+        
+        return []
             
-            
+class ActionElectiveSubject(Action):
+    
+    def name(self) -> Text:
+        return "action_elective_subject"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        try:
+            mycursor = conn.cursor()
+            sql = """SELECT education_year.year,education_year.term,subject.id,subject.name FROM subject
+                INNER JOIN education_year ON (subject.education_year_id = education_year.id)
+                INNER JOIN course_year ON (subject.course_year_id = course_year.id)
+                WHERE course_year.year = '2565' AND subject.isRequire = '0'"""
+            mycursor.execute(sql)
+            results = mycursor.fetchall()
+
+            respon = ""
+            for x in results:
+                y = 1
+                respon += f"{str(y)} : รหัสวิชา {x[0]}  \n    {x[1]}  \n"
+            dispatcher.utter_message(text = respon)
+
+        except Exception as e:
+            dispatcher.utter_message(text = "action_required_subject\n" + str(e))
+
+        return []
 
 class ActionFallBack(Action):
     
@@ -342,8 +371,8 @@ class ActionFallBack(Action):
                 conn.commit()
 
             dispatcher.utter_message(text = "ขออภัยค่ะ ฉันไม่สามารถตอบคำถามของคุณได้  \nหากพิมพ์ผิด กรุณาพิมพ์ใหม่ได้ไหมคะ")
-            return []
         except Exception as e:
             # dispatcher.utter_message(text = "ขออภัยค่ะ ฉันไม่สามารถตอบคำถามของคุณได้  \nหากพิมพ์ผิด กรุณาพิมพ์ใหม่ได้ไหมคะ")
             dispatcher.utter_message(text = str(e))
-            return []
+        
+        return []

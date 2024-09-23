@@ -47,6 +47,11 @@ rules:
   - intent: ask_required_subject
   - action: action_required_subject
 
+- rule: Tell all Elective Subject
+  steps:
+  - intent: ask_elective_subject
+  - action: action_elective_subject
+
 - rule: Fall Back
   steps:
   - intent: nlu_fallback
