@@ -137,8 +137,8 @@ class ActionOneTermPrice(Action):
             sql = """SELECT education_year.year,education_year.term,educationfee.price,educationfee.detail FROM educationfee
             INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
             INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
-            WHERE course_year.year = '2565' AND education_year.year = '%s' AND education_year.term = '%s'"""%(year,term)
-            mycursor.execute(sql) 
+            WHERE course_year.year = '2565' AND education_year.year = %s AND education_year.term = %s"""
+            mycursor.execute(sql,(year,term)) 
             results = mycursor.fetchall()
             respon = "ปี " + str(results[0][0]) + " เทอม " + str(results[0][1]) + " ค่าเทอม " + str(results[0][2]) + " บาท  \nโดยแบ่งเป็น  \n" + results[0][3].replace("\n","  \n")
 
@@ -290,7 +290,8 @@ class ActionRequiredSubject(Action):
         
         try:
             mycursor = conn.cursor()
-            sql = """SELECT subject.id,subject.name FROM subject
+            sql = """SELECT education_year.year,education_year.term,subject.id,subject.name FROM subject
+                INNER JOIN education_year ON (subject.education_year_id = education_year.id)
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
                 WHERE course_year.year = '2565' AND subject.isRequire = '1'"""
             mycursor.execute(sql)
@@ -301,12 +302,14 @@ class ActionRequiredSubject(Action):
                 if [x[0],x[1]] not in eyear:
                     eyear.append([x[0],x[1]])
         
-            respon = ""
+            respon = "นี่คือวิชาบังคับที่มีในหลักสูตรทั้งหมดค่ะ  \n\n"
             for x in eyear:
                 respon += f"ปี {x[0]} เทอม {x[1]}  \n"
+                z = 1
                 for y in results:
                     if [y[0], y[1]] == x:
-                        respon += f"รหัสวิชา {y[2]}  \n   {y[3]}  \n  \n"
+                        respon += f"{z} : รหัสวิชา {y[2]}  \n&nbsp;&nbsp;&nbsp;{y[3]}  \n"
+                        z += 1
                 respon += "  \n\n"
 
             dispatcher.utter_message(text = respon)
@@ -327,22 +330,75 @@ class ActionElectiveSubject(Action):
         
         try:
             mycursor = conn.cursor()
-            sql = """SELECT education_year.year,education_year.term,subject.id,subject.name FROM subject
-                INNER JOIN education_year ON (subject.education_year_id = education_year.id)
+            sql = """SELECT subject.id,subject.name FROM subject
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
                 WHERE course_year.year = '2565' AND subject.isRequire = '0'"""
             mycursor.execute(sql)
             results = mycursor.fetchall()
 
-            respon = ""
+            respon = "นี่คือวิชาเลือกทั้งหมดค่ะ  \n\n"
+            y = 1
             for x in results:
-                y = 1
-                respon += f"{str(y)} : รหัสวิชา {x[0]}  \n    {x[1]}  \n"
+                respon += f"{str(y)} : รหัสวิชา {x[0]}  \n&nbsp;&nbsp;&nbsp;{x[1]}  \n"
+                y += 1
+
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
             dispatcher.utter_message(text = "action_required_subject\n" + str(e))
 
+        return []
+    
+class ActionSubjectOneTerm(Action):
+    
+    def name(self) -> Text:
+        return "action_subject_one_term"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        yearCheck = {
+            '1': '1',
+            '2': '2',
+            'หนึ่ง': '1',
+            'สอง': '2'
+        }
+
+        termCheck = {
+            '1': '1',
+            '2': '2',
+            'หนึ่ง': '1',
+            'สอง': '2',
+            'summer': '3',
+            'Summer': '3',
+            'ซัมเมอร์': '3',
+            'ซัมเมอ': '3'
+        }
+        
+        try:
+            year = yearCheck[next(tracker.get_latest_entity_values("year"), None)]
+            term = termCheck[next(tracker.get_latest_entity_values("term"), None)]
+
+            mycursor = conn.cursor()
+            sql = """SELECT subject.id,subject.name FROM subject
+                INNER JOIN education_year ON (subject.education_year_id = education_year.id)
+                INNER JOIN course_year ON (subject.course_year_id = course_year.id)
+                WHERE course_year.year = '2565' AND subject.isRequire = '1' AND education_year.year = %s AND education_year.term = %s"""
+            mycursor.execute(sql,(year,term))
+            results = mycursor.fetchall()
+
+            respon = f"นี่คือวิชาที่มีเรียนในปี {year} เทอม {term} ค่ะ  \n\n"
+            y = 1
+            for x in results:
+                respon += f"{y} : รหัสวิชา {x[0]}  \n&nbsp;&nbsp;&nbsp;{x[1]}  \n"
+                y += 1
+
+            dispatcher.utter_message(text = respon)
+
+        except Exception as e:
+            dispatcher.utter_message(text = "action_subject_one_term\n" + str(e))
+        
         return []
 
 class ActionFallBack(Action):
@@ -355,7 +411,7 @@ class ActionFallBack(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         userMessage = tracker.latest_message.get('text')
-
+        
         try:
             mycursor = conn.cursor()
             sql = "SELECT id FROM fallback_message WHERE message = %s"

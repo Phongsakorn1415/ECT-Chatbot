@@ -52,6 +52,11 @@ rules:
   - intent: ask_elective_subject
   - action: action_elective_subject
 
+- rule: Tell Elective Subject Only One Term
+  steps:
+  - intent: ask_subject_one_term
+  - action: action_subject_one_term
+
 - rule: Fall Back
   steps:
   - intent: nlu_fallback
