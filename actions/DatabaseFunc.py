@@ -19,11 +19,11 @@ class DBFunc:
         conn.close()  # Make sure to close the connection
         return results
 
-    def insert_ask_answer_msg(user_msg: str,bot_msg: str):
-        conn = DatabaseFunc.get_connection()
+    def insert_ask_answer_msg(user_msg: str, bot_msg: str, intent_name: str, confidence: float):
+        conn = DBFunc.get_connection()
         cursor = conn.cursor()
-        sql = ""
-        cursor.execute(sql,(user_msg,bot_msg,))
+        sql = "INSERT INTO collected_data (user_msg, bot_msg, intent_name, confidence, DateTime) VALUES (%s, %s, %s, %s, now())"
+        cursor.execute(sql,(user_msg,bot_msg,intent_name,str(confidence)))
         conn.commit()
         cursor.close
         conn.close()

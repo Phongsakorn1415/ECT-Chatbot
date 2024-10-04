@@ -85,6 +85,12 @@ class ActionAllTermPrice(Action):
                     respon = respon + "ปีที่ " + str(x[1]) + " เทอมที่ " + str(x[2]) + " ค่าเทอม " + str(x[3]) + " บาท  \n"
             
             respon += lastrespon
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
@@ -131,6 +137,12 @@ class ActionOneTermPrice(Action):
             results = DBFunc.DBfetch(sql,(year,term))
             respon = "ปี " + str(results[0][0]) + " เทอม " + str(results[0][1]) + " ค่าเทอม " + str(results[0][2]) + " บาท  \nโดยแบ่งเป็น  \n" + results[0][3].replace("\n","  \n")
 
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
@@ -155,6 +167,13 @@ class ActionLateFees(Action):
             WHERE course_year.year = '2565' AND education_year.year = '0' AND education_year.term = '0'"""
             results = DBFunc.DBfetch(sql)
             respon = "ค่าปรับลงทะเบียนเรียนช้า " + str(results[0][0]) + " บาทต่อ" + results[0][1] + " " + results[0][2]
+
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
@@ -179,6 +198,12 @@ class ActionTeacherAll(Action):
             for x in results:
                 respon = respon + x[0] + " " + x[1] + "  \n"
             
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
             dispatcher.utter_message(text = respon)
         
         except Exception as e:
@@ -221,6 +246,13 @@ class ActionTeacherContact(Action):
                         respon = respon + f" - {y[1]}"
                     if y == results[len(results) - 1]:
                         respon = respon + "  \n\n"
+
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
@@ -244,20 +276,26 @@ class ActionTeacherTeach(Action):
             INNER JOIN user ON (teach.user_id = user.id)
             INNER JOIN subject ON (teach.subject_id = subject.id)
             WHERE user.name = %s AND user.role = 't' ORDER BY subject.id"""
-            results = DBFunc.DBfetch(sql,(tname))
+            results = DBFunc.DBfetch(sql,(tname,))
             if len(results) < 1:
                 respon = f"อาจารย์ {tname} ไม่มีข้อมูลชวิชาที่สอน"
-                dispatcher.utter_message(text = respon)
-                return []
+            else:
+                respon = f"นี่คือวิชาทั้งหมดที่อาจารย์ {tname} สอนค่ะ  \n"
+                for x in results:
+                    respon += "รหัสวิชา : " + str(x[0]) + "  \n" + x[1] + "  \n  \n"
             
-            respon = f"นี่คือวิชาทั้งหมดที่อาจารย์ {tname} สอนค่ะ  \n"
-            for x in results:
-                respon += "รหัสวิชา : " + str(x[0]) + "  \n" + x[1] + "  \n  \n"
+
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
             dispatcher.utter_message(text = str(e))
-
+        
         return []
 
 class ActionRequiredSubject(Action):
@@ -291,6 +329,12 @@ class ActionRequiredSubject(Action):
                         z += 1
                 respon += "  \n\n"
 
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
@@ -319,6 +363,12 @@ class ActionElectiveSubject(Action):
                 respon += f"{str(y)} : รหัสวิชา {x[0]}  \n&nbsp;&nbsp;&nbsp;{x[1]}  \n"
                 y += 1
 
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
@@ -369,6 +419,12 @@ class ActionSubjectOneTerm(Action):
                 respon += f"{y} : รหัสวิชา {x[0]}  \n&nbsp;&nbsp;&nbsp;{x[1]}  \n"
                 y += 1
 
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
@@ -392,8 +448,15 @@ class ActionOneSubjectEducationTerm(Action):
                 INNER JOIN education_year ON (subject.education_year_id = education_year.id)
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
                 WHERE course_year.year = '2565' AND subject.name = %s"""
-            results = DBFunc.DBfetch(sql,(sname))
+            results = DBFunc.DBfetch(sql,(sname,))
             respon = f"วิชา {sname}  \nเรียนตอนปี {results[0][0]} เทอม {results[0][1]} ค่ะ"
+
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
