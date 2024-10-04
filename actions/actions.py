@@ -452,7 +452,8 @@ class ActionFallBack(Action):
                 sql = "UPDATE fallback_message SET count = count + 1 WHERE id = %s"
                 mycursor.execute(sql,(results[0],))
                 conn.commit()
-
+            conn.close()
+            
             dispatcher.utter_message(text = "ขออภัยค่ะ ฉันไม่สามารถตอบคำถามของคุณได้  \nหากพิมพ์ผิด กรุณาพิมพ์ใหม่ได้ไหมคะ")
         except Exception as e:
             # dispatcher.utter_message(text = "ขออภัยค่ะ ฉันไม่สามารถตอบคำถามของคุณได้  \nหากพิมพ์ผิด กรุณาพิมพ์ใหม่ได้ไหมคะ")
