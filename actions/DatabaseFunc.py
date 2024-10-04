@@ -1,6 +1,6 @@
 import mysql.connector
 
-class DatabaseFunc:
+class DBFunc:
     
     def get_connection():
         return mysql.connector.connect(
@@ -11,10 +11,11 @@ class DatabaseFunc:
         )
     
     def DBfetch(sql: str, params: tuple = ()):
-        conn = DatabaseFunc.get_connection()
+        conn = DBFunc.get_connection()
         cursor = conn.cursor()
         cursor.execute(sql, params)
         results = cursor.fetchall()
+        cursor.close
         conn.close()  # Make sure to close the connection
         return results
 
@@ -24,4 +25,5 @@ class DatabaseFunc:
         sql = ""
         cursor.execute(sql,(user_msg,bot_msg,))
         conn.commit()
+        cursor.close
         conn.close()

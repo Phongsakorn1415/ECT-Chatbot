@@ -52,19 +52,12 @@
 #     except:
 #         dispatcher.utter_message("Error : Unable to fetch data.")
 from rasa_sdk.types import DomainDict
-import mysql.connector
 import thaispellcheck
+from .DatabaseFunc import DBFunc
 from typing import Any, Coroutine, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
-
-conn=mysql.connector.connect(
-        host="localhost", 
-        user="root", 
-        passwd="", 
-        database="ect_chatbot"
-    )
 
 class ActionAllTermPrice(Action):
 
@@ -76,15 +69,13 @@ class ActionAllTermPrice(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            mycursor = conn.cursor()
             sql = """
             SELECT course_year.year,education_year.year,education_year.term,educationfee.price,educationfee.per,educationfee.detail FROM educationfee
             INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
             INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
             WHERE course_year.year = '2565' 
             ORDER BY education_year.year,education_year.term"""
-            mycursor.execute(sql) 
-            results = mycursor.fetchall()
+            results = DBFunc.DBfetch(sql)
             respon = "หลักสูตรปี "+ str(results[0][0]) +"  \n"
             lastrespon = ""
             for x in results:
@@ -133,13 +124,11 @@ class ActionOneTermPrice(Action):
             year = yearCheck[next(tracker.get_latest_entity_values("year"), None)]
             term = termCheck[next(tracker.get_latest_entity_values("term"), None)]
             
-            mycursor = conn.cursor()
             sql = """SELECT education_year.year,education_year.term,educationfee.price,educationfee.detail FROM educationfee
             INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
             INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
             WHERE course_year.year = '2565' AND education_year.year = %s AND education_year.term = %s"""
-            mycursor.execute(sql,(year,term)) 
-            results = mycursor.fetchall()
+            results = DBFunc.DBfetch(sql,(year,term))
             respon = "ปี " + str(results[0][0]) + " เทอม " + str(results[0][1]) + " ค่าเทอม " + str(results[0][2]) + " บาท  \nโดยแบ่งเป็น  \n" + results[0][3].replace("\n","  \n")
 
             dispatcher.utter_message(text = respon)
@@ -160,13 +149,11 @@ class ActionLateFees(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            mycursor = conn.cursor()
             sql = """SELECT educationfee.price,educationfee.per,educationfee.detail FROM educationfee
             INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
             INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
             WHERE course_year.year = '2565' AND education_year.year = '0' AND education_year.term = '0'"""
-            mycursor.execute(sql) 
-            results = mycursor.fetchall()
+            results = DBFunc.DBfetch(sql)
             respon = "ค่าปรับลงทะเบียนเรียนช้า " + str(results[0][0]) + " บาทต่อ" + results[0][1] + " " + results[0][2]
             dispatcher.utter_message(text = respon)
 
@@ -186,10 +173,8 @@ class ActionTeacherAll(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         try:
-            mycursor = conn.cursor()
             sql = """SELECT name,lastname FROM user WHERE role = 't' ORDER BY name"""
-            mycursor.execute(sql) 
-            results = mycursor.fetchall()
+            results = DBFunc.DBfetch(sql)
             respon = "อาจารย์  \n"
             for x in results:
                 respon = respon + x[0] + " " + x[1] + "  \n"
@@ -213,14 +198,12 @@ class ActionTeacherContact(Action):
         tname = next(tracker.get_latest_entity_values("tname"), None)
 
         try:
-            mycursor = conn.cursor()
             sql = """SELECT contact_type.type_name,contact.detail,user.title FROM contact
             INNER JOIN user ON (contact.user_id = user.id)
             INNER JOIN contact_type ON (contact.contact_type_id = contact_type.id)
             WHERE user.name = %s AND user.role = 't' ORDER BY contact_type.id"""
-            mycursor.execute(sql,(tname,))
-            results = mycursor.fetchall()
-            if mycursor.rowcount < 1:
+            results = DBFunc.DBfetch(sql,(tname,))
+            if len(results) < 1:
                 respon = f"อาจารย์ {tname} ไม่มีข้อมูลช่องทางติดต่อ"
                 dispatcher.utter_message(text = respon)
                 return []
@@ -257,14 +240,12 @@ class ActionTeacherTeach(Action):
         tname = next(tracker.get_latest_entity_values("tname"), None)
 
         try:
-            mycursor = conn.cursor()
             sql = """SELECT subject.id,subject.name FROM teach
             INNER JOIN user ON (teach.user_id = user.id)
             INNER JOIN subject ON (teach.subject_id = subject.id)
             WHERE user.name = %s AND user.role = 't' ORDER BY subject.id"""
-            mycursor.execute(sql,(tname,))
-            results = mycursor.fetchall()
-            if mycursor.rowcount < 1:
+            results = DBFunc.DBfetch(sql,(tname))
+            if len(results) < 1:
                 respon = f"อาจารย์ {tname} ไม่มีข้อมูลชวิชาที่สอน"
                 dispatcher.utter_message(text = respon)
                 return []
@@ -289,13 +270,11 @@ class ActionRequiredSubject(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         try:
-            mycursor = conn.cursor()
             sql = """SELECT education_year.year,education_year.term,subject.id,subject.name FROM subject
                 INNER JOIN education_year ON (subject.education_year_id = education_year.id)
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
                 WHERE course_year.year = '2565' AND subject.isRequire = '1'"""
-            mycursor.execute(sql)
-            results = mycursor.fetchall()
+            results = DBFunc.DBfetch(sql)
 
             eyear = []
             for x in results:
@@ -329,12 +308,10 @@ class ActionElectiveSubject(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         try:
-            mycursor = conn.cursor()
             sql = """SELECT subject.id,subject.name FROM subject
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
                 WHERE course_year.year = '2565' AND subject.isRequire = '0'"""
-            mycursor.execute(sql)
-            results = mycursor.fetchall()
+            results = DBFunc.DBfetch(sql)
 
             respon = "นี่คือวิชาเลือกทั้งหมดค่ะ  \n\n"
             y = 1
@@ -380,13 +357,11 @@ class ActionSubjectOneTerm(Action):
             year = yearCheck[next(tracker.get_latest_entity_values("year"), None)]
             term = termCheck[next(tracker.get_latest_entity_values("term"), None)]
 
-            mycursor = conn.cursor()
             sql = """SELECT subject.id,subject.name FROM subject
                 INNER JOIN education_year ON (subject.education_year_id = education_year.id)
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
                 WHERE course_year.year = '2565' AND subject.isRequire = '1' AND education_year.year = %s AND education_year.term = %s"""
-            mycursor.execute(sql,(year,term))
-            results = mycursor.fetchall()
+            results = DBFunc.DBfetch(sql,(year,term))
 
             respon = f"นี่คือวิชาที่มีเรียนในปี {year} เทอม {term} ค่ะ  \n\n"
             y = 1
@@ -413,13 +388,11 @@ class ActionOneSubjectEducationTerm(Action):
         sname = next(tracker.get_latest_entity_values("year"), None)
 
         try:
-            mycursor = conn.cursor()
             sql = """SELECT education_year.year,education_year.term FROM subject
                 INNER JOIN education_year ON (subject.education_year_id = education_year.id)
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
                 WHERE course_year.year = '2565' AND subject.name = %s"""
-            mycursor.execute(sql,(sname))
-            results = mycursor.fetchall()
+            results = DBFunc.DBfetch(sql,(sname))
             respon = f"วิชา {sname}  \nเรียนตอนปี {results[0][0]} เทอม {results[0][1]} ค่ะ"
             dispatcher.utter_message(text = respon)
 
@@ -440,6 +413,7 @@ class ActionFallBack(Action):
         userMessage = tracker.latest_message.get('text')
         
         try:
+            conn = DBFunc.get_connection()
             mycursor = conn.cursor()
             sql = "SELECT id FROM fallback_message WHERE message = %s"
             mycursor.execute(sql,(userMessage,))
@@ -452,6 +426,7 @@ class ActionFallBack(Action):
                 sql = "UPDATE fallback_message SET count = count + 1 WHERE id = %s"
                 mycursor.execute(sql,(results[0],))
                 conn.commit()
+            mycursor.close
             conn.close()
             
             dispatcher.utter_message(text = "ขออภัยค่ะ ฉันไม่สามารถตอบคำถามของคุณได้  \nหากพิมพ์ผิด กรุณาพิมพ์ใหม่ได้ไหมคะ")
