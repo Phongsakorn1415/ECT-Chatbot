@@ -57,6 +57,11 @@ rules:
   - intent: ask_subject_one_term
   - action: action_subject_one_term
 
+- rule: Tell Term That Learn That Subject
+  steps:
+  - intent: ask_subject_education_term
+  - action: action_subject_education_term
+
 - rule: Fall Back
   steps:
   - intent: nlu_fallback

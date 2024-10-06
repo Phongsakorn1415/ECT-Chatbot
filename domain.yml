@@ -14,7 +14,7 @@ intents:
   - ask_required_subject
   - ask_elective_subject
   - ask_subject_one_term
-  - ask_one_subject_education_term
+  - ask_subject_education_term
   - out_of_scope
 
 entities:
@@ -44,6 +44,13 @@ slots:
       - type: from_entity
         entity: tname
 
+  subjectName:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: sname
+
 responses:
   utter_greet:
   - text: "สวัสดีค่ะ ต้องการสอบถามเรื่องอะไรคะ"
@@ -65,7 +72,7 @@ actions:
   - action_fallback
   - action_elective_subject
   - action_subject_one_term
-  - action_one_subject_education_term
+  - action_subject_education_term
 
 session_config:
   session_expiration_time: 60

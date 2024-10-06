@@ -435,13 +435,13 @@ class ActionSubjectOneTerm(Action):
 class ActionOneSubjectEducationTerm(Action):
     
     def name(self) -> Text:
-        return "action_one_subject_education_term"
+        return "action_subject_education_term"
     
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        sname = next(tracker.get_latest_entity_values("year"), None)
+        sname = next(tracker.get_latest_entity_values("sname"), None)
 
         try:
             sql = """SELECT education_year.year,education_year.term FROM subject
@@ -449,7 +449,18 @@ class ActionOneSubjectEducationTerm(Action):
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
                 WHERE course_year.year = '2565' AND subject.name = %s"""
             results = DBFunc.DBfetch(sql,(sname,))
-            respon = f"วิชา {sname}  \nเรียนตอนปี {results[0][0]} เทอม {results[0][1]} ค่ะ"
+
+            respon = ""
+            if not sname:
+                respon = "ขออภัยค่ะ กรุณาตรวจสอบว่าชื่อวิชาพิมพ์ถูกหรือไม่ด้วยนะคะ"
+            
+            else:
+                for x in results:
+                    if x[0] == 0:
+                        respon += f"วิชา {sname}  \nเป็นวิชาเลือกค่ะ ไม่มีกำหนดว่าเรียนเทอมไหนค่ะ"
+                    else:
+                        respon += f"วิชา {sname}  \nเรียนตอนปี {x[0]} เทอม {x[1]} ค่ะ"
+            
 
             DBFunc.insert_ask_answer_msg(
                 tracker.latest_message.get('text'), 
@@ -460,7 +471,7 @@ class ActionOneSubjectEducationTerm(Action):
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            dispatcher.utter_message(text = "IN action_one_subject_education_term\n ERROR => " + str(e))
+            dispatcher.utter_message(text = "IN action_subject_education_term\n ERROR => " + str(e))
         
         return []
 
