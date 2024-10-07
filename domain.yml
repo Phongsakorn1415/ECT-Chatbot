@@ -16,6 +16,7 @@ intents:
   - ask_subject_one_term
   - ask_subject_education_term
   - ask_subject_language
+  - ask_subject_credit
   - out_of_scope
 
 entities:
@@ -74,6 +75,7 @@ actions:
   - action_subject_one_term
   - action_subject_education_term
   - action_subject_language
+  - action_subject_credit
   - action_fallback
 
 session_config:

@@ -516,6 +516,43 @@ class ActionSubjectLanguage(Action):
             dispatcher.utter_message(text = "IN action_subject_language\n ERROR => " + str(e))
         
         return []
+    
+class ActionSubjectCredit(Action):
+    
+    def name(self) -> Text:
+        return "action_subject_credit"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        sname = next(tracker.get_latest_entity_values("sname"), None)
+
+        try:
+            sql = """SELECT subject.credit FROM subject
+                INNER JOIN course_year ON (subject.course_year_id = course_year.id)
+                WHERE course_year.year = '2565' AND subject.name = %s"""
+            results = DBFunc.DBfetch(sql,(sname,))
+
+            respon = ""
+            if not sname:
+                respon = "ขออภัยค่ะ กรุณาตรวจสอบว่าชื่อวิชาพิมพ์ถูกหรือไม่ด้วยนะคะ"
+            else:
+                for x in results:
+                    respon += f"วิชา {sname}  \nมี {x[0]} หน่วยกิต"
+            
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
+            dispatcher.utter_message(text = respon)
+
+        except Exception as e:
+            dispatcher.utter_message(text = "IN action_subject_credit\n ERROR => " + str(e))
+        
+        return []
 
 class ActionFallBack(Action):
     

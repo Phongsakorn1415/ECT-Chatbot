@@ -67,6 +67,11 @@ rules:
   - intent: ask_subject_language
   - action: action_subject_language
 
+- rule: Tell Subject Credit
+  steps:
+  - intent: ask_subject_credit
+  - action: action_subject_credit
+
 - rule: Fall Back
   steps:
   - intent: nlu_fallback
