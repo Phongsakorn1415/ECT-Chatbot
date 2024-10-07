@@ -432,7 +432,7 @@ class ActionSubjectOneTerm(Action):
         
         return []
     
-class ActionOneSubjectEducationTerm(Action):
+class ActionSubjectEducationTerm(Action):
     
     def name(self) -> Text:
         return "action_subject_education_term"
@@ -472,6 +472,48 @@ class ActionOneSubjectEducationTerm(Action):
 
         except Exception as e:
             dispatcher.utter_message(text = "IN action_subject_education_term\n ERROR => " + str(e))
+        
+        return []
+    
+class ActionSubjectLanguage(Action):
+    
+    def name(self) -> Text:
+        return "action_subject_language"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        sname = next(tracker.get_latest_entity_values("sname"), None)
+
+        try:
+            sql = """SELECT subject.language FROM subject
+                INNER JOIN course_year ON (subject.course_year_id = course_year.id)
+                WHERE course_year.year = '2565' AND subject.name = %s"""
+            results = DBFunc.DBfetch(sql,(sname,))
+
+            respon = ""
+            if not sname:
+                respon = "ขออภัยค่ะ กรุณาตรวจสอบว่าชื่อวิชาพิมพ์ถูกหรือไม่ด้วยนะคะ"
+            
+            else:
+                for x in results:
+                    if x[0] == "th":
+                        respon += f"วิชา {sname}  \nเรียนเป็นภาษาไทยค่ะ"
+                    elif x[0] == "en":
+                        respon += f"วิชา {sname}  \nเรียนเป็นภาษาอังกฤษค่ะ"
+            
+
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
+            dispatcher.utter_message(text = respon)
+
+        except Exception as e:
+            dispatcher.utter_message(text = "IN action_subject_language\n ERROR => " + str(e))
         
         return []
 

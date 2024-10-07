@@ -62,6 +62,11 @@ rules:
   - intent: ask_subject_education_term
   - action: action_subject_education_term
 
+- rule: Tell Subject Language
+  steps:
+  - intent: ask_subject_language
+  - action: action_subject_language
+
 - rule: Fall Back
   steps:
   - intent: nlu_fallback

@@ -15,6 +15,7 @@ intents:
   - ask_elective_subject
   - ask_subject_one_term
   - ask_subject_education_term
+  - ask_subject_language
   - out_of_scope
 
 entities:
@@ -69,10 +70,11 @@ actions:
   - action_teacher_contact
   - action_teacher_teach
   - action_required_subject
-  - action_fallback
   - action_elective_subject
   - action_subject_one_term
   - action_subject_education_term
+  - action_subject_language
+  - action_fallback
 
 session_config:
   session_expiration_time: 60
