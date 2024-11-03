@@ -52,7 +52,7 @@
 #     except:
 #         dispatcher.utter_message("Error : Unable to fetch data.")
 from rasa_sdk.types import DomainDict
-import thaispellcheck
+import json
 from .DatabaseFunc import DBFunc
 from typing import Any, Coroutine, Text, Dict, List
 from rasa_sdk import Action, Tracker
@@ -453,6 +453,8 @@ class ActionSubjectEducationTerm(Action):
             respon = ""
             if not sname:
                 respon = "ขออภัยค่ะ กรุณาตรวจสอบว่าชื่อวิชาพิมพ์ถูกหรือไม่ด้วยนะคะ"
+            elif not results:
+                respon = f"วิชา {sname} ไม่มีข้อมูลค่ะ"
             
             else:
                 for x in results:
@@ -495,6 +497,8 @@ class ActionSubjectLanguage(Action):
             respon = ""
             if not sname:
                 respon = "ขออภัยค่ะ กรุณาตรวจสอบว่าชื่อวิชาพิมพ์ถูกหรือไม่ด้วยนะคะ"
+            elif not results:
+                respon = f"วิชา {sname} ไม่มีข้อมูลค่ะ"
             
             else:
                 for x in results:
@@ -537,6 +541,8 @@ class ActionSubjectCredit(Action):
             respon = ""
             if not sname:
                 respon = "ขออภัยค่ะ กรุณาตรวจสอบว่าชื่อวิชาพิมพ์ถูกหรือไม่ด้วยนะคะ"
+            elif not results:
+                respon = f"วิชา {sname} ไม่มีข้อมูลค่ะ"
             else:
                 for x in results:
                     respon += f"วิชา {sname}  \nมี {x[0]} หน่วยกิต"
@@ -564,21 +570,29 @@ class ActionFallBack(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         userMessage = tracker.latest_message.get('text')
+        ranking = tracker.latest_message['intent_ranking']
         
         try:
             conn = DBFunc.get_connection()
             mycursor = conn.cursor()
-            sql = "SELECT id FROM fallback_message WHERE message = %s"
-            mycursor.execute(sql,(userMessage,))
-            results = mycursor.fetchone()
-            if(mycursor.rowcount < 1):
-                sql = "INSERT INTO fallback_message (message, date, count) VALUES (%s, now(), 1)"
-                mycursor.execute(sql,(userMessage,))
-                conn.commit()
-            else:
-                sql = "UPDATE fallback_message SET count = count + 1 WHERE id = %s"
-                mycursor.execute(sql,(results[0],))
-                conn.commit()
+            # sql = "SELECT id FROM fallback_message WHERE message = %s"
+            # mycursor.execute(sql,(userMessage,))
+            # results = mycursor.fetchone()
+            # if(mycursor.rowcount < 1):
+            #     sql = "INSERT INTO fallback_message (message, date, count) VALUES (%s, now(), 1)"
+            #     mycursor.execute(sql,(userMessage,))
+            #     conn.commit()
+            # else:
+            #     sql = "UPDATE fallback_message SET count = count + 1 WHERE id = %s"
+            #     mycursor.execute(sql,(results[0],))
+            #     conn.commit()
+
+            filtered_ranking = [intent for intent in ranking if intent['name'] != 'nlu_fallback']
+            top_intent = json.dumps(filtered_ranking[:3])
+
+            sql = "INSERT INTO fallback_message (message, date, intent_ranking) VALUES (%s, now(), %s)"
+            mycursor.execute(sql,(userMessage,top_intent))
+            conn.commit()
             mycursor.close
             conn.close()
             

@@ -23,6 +23,7 @@ entities:
   - year
   - term
   - tname
+  - sname
 
 slots:
   educationYear:
