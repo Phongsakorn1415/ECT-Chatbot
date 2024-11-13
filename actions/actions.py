@@ -133,7 +133,7 @@ class ActionOneTermPrice(Action):
             sql = """SELECT education_year.year,education_year.term,educationfee.price,educationfee.detail FROM educationfee
             INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
             INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
-            WHERE course_year.year = '2565' AND education_year.year = %s AND education_year.term = %s"""
+            WHERE course_year.year = '2565' AND education_year.year = ? AND education_year.term = ?"""
             results = DBFunc.DBfetch(sql,(year,term))
             respon = "ปี " + str(results[0][0]) + " เทอม " + str(results[0][1]) + " ค่าเทอม " + str(results[0][2]) + " บาท  \nโดยแบ่งเป็น  \n" + results[0][3].replace("\n","  \n")
 
@@ -226,7 +226,7 @@ class ActionTeacherContact(Action):
             sql = """SELECT contact_type.type_name,contact.detail,user.title FROM contact
             INNER JOIN user ON (contact.user_id = user.id)
             INNER JOIN contact_type ON (contact.contact_type_id = contact_type.id)
-            WHERE user.name = %s AND user.role = 't' ORDER BY contact_type.id"""
+            WHERE user.name = ? AND user.role = 't' ORDER BY contact_type.id"""
             results = DBFunc.DBfetch(sql,(tname,))
             if len(results) < 1:
                 respon = f"อาจารย์ {tname} ไม่มีข้อมูลช่องทางติดต่อ"
@@ -275,7 +275,7 @@ class ActionTeacherTeach(Action):
             sql = """SELECT subject.id,subject.name FROM teach
             INNER JOIN user ON (teach.user_id = user.id)
             INNER JOIN subject ON (teach.subject_id = subject.id)
-            WHERE user.name = %s AND user.role = 't' ORDER BY subject.id"""
+            WHERE user.name = ? AND user.role = 't' ORDER BY subject.id"""
             results = DBFunc.DBfetch(sql,(tname,))
             if len(results) < 1:
                 respon = f"อาจารย์ {tname} ไม่มีข้อมูลชวิชาที่สอน"
@@ -410,7 +410,7 @@ class ActionSubjectOneTerm(Action):
             sql = """SELECT subject.id,subject.name FROM subject
                 INNER JOIN education_year ON (subject.education_year_id = education_year.id)
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
-                WHERE course_year.year = '2565' AND subject.isRequire = '1' AND education_year.year = %s AND education_year.term = %s"""
+                WHERE course_year.year = '2565' AND subject.isRequire = '1' AND education_year.year = ? AND education_year.term = ?"""
             results = DBFunc.DBfetch(sql,(year,term))
 
             respon = f"นี่คือวิชาที่มีเรียนในปี {year} เทอม {term} ค่ะ  \n\n"
@@ -447,7 +447,7 @@ class ActionSubjectEducationTerm(Action):
             sql = """SELECT education_year.year,education_year.term FROM subject
                 INNER JOIN education_year ON (subject.education_year_id = education_year.id)
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
-                WHERE course_year.year = '2565' AND subject.name = %s"""
+                WHERE course_year.year = '2565' AND subject.name = ?"""
             results = DBFunc.DBfetch(sql,(sname,))
 
             respon = ""
@@ -491,7 +491,7 @@ class ActionSubjectLanguage(Action):
         try:
             sql = """SELECT subject.language FROM subject
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
-                WHERE course_year.year = '2565' AND subject.name = %s"""
+                WHERE course_year.year = '2565' AND subject.name = ?"""
             results = DBFunc.DBfetch(sql,(sname,))
 
             respon = ""
@@ -535,7 +535,7 @@ class ActionSubjectCredit(Action):
         try:
             sql = """SELECT subject.credit FROM subject
                 INNER JOIN course_year ON (subject.course_year_id = course_year.id)
-                WHERE course_year.year = '2565' AND subject.name = %s"""
+                WHERE course_year.year = '2565' AND subject.name = ?"""
             results = DBFunc.DBfetch(sql,(sname,))
 
             respon = ""
@@ -575,22 +575,22 @@ class ActionFallBack(Action):
         try:
             conn = DBFunc.get_connection()
             mycursor = conn.cursor()
-            # sql = "SELECT id FROM fallback_message WHERE message = %s"
+            # sql = "SELECT id FROM fallback_message WHERE message = ?"
             # mycursor.execute(sql,(userMessage,))
             # results = mycursor.fetchone()
             # if(mycursor.rowcount < 1):
-            #     sql = "INSERT INTO fallback_message (message, date, count) VALUES (%s, now(), 1)"
+            #     sql = "INSERT INTO fallback_message (message, date, count) VALUES (?, now(), 1)"
             #     mycursor.execute(sql,(userMessage,))
             #     conn.commit()
             # else:
-            #     sql = "UPDATE fallback_message SET count = count + 1 WHERE id = %s"
+            #     sql = "UPDATE fallback_message SET count = count + 1 WHERE id = ?"
             #     mycursor.execute(sql,(results[0],))
             #     conn.commit()
 
             filtered_ranking = [intent for intent in ranking if intent['name'] != 'nlu_fallback']
             top_intent = json.dumps(filtered_ranking[:3])
 
-            sql = "INSERT INTO fallback_message (message, date, intent_ranking) VALUES (%s, now(), %s)"
+            sql = "INSERT INTO fallback_message (message, date, intent_ranking) VALUES (?, now(), ?)"
             mycursor.execute(sql,(userMessage,top_intent))
             conn.commit()
             mycursor.close
