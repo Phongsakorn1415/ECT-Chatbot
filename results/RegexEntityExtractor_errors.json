@@ -1,0 +1,4256 @@
+[
+  {
+    "text": "ค่าเทอมปี1เทอม1",
+    "entities": [
+      {
+        "start": 9,
+        "end": 10,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 14,
+        "end": 15,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 9,
+        "end": 10,
+        "confidence_entity": 0.9978190660476685,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 14,
+        "end": 15,
+        "confidence_entity": 0.9995471835136414,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี1เทอม2",
+    "entities": [
+      {
+        "start": 9,
+        "end": 10,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 14,
+        "end": 15,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 9,
+        "end": 10,
+        "confidence_entity": 0.9978190660476685,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 14,
+        "end": 15,
+        "confidence_entity": 0.9995471835136414,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี2เทอม1",
+    "entities": [
+      {
+        "start": 9,
+        "end": 10,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 14,
+        "end": 15,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 9,
+        "end": 10,
+        "confidence_entity": 0.9978190660476685,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 14,
+        "end": 15,
+        "confidence_entity": 0.9995471835136414,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี2เทอม2",
+    "entities": [
+      {
+        "start": 9,
+        "end": 10,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 14,
+        "end": 15,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 9,
+        "end": 10,
+        "confidence_entity": 0.9978190660476685,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 14,
+        "end": 15,
+        "confidence_entity": 0.9995471835136414,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี 1 เทอม 1",
+    "entities": [
+      {
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 17,
+        "end": 18,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 11,
+        "confidence_entity": 0.999816358089447,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 17,
+        "end": 18,
+        "confidence_entity": 0.999868631362915,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 17,
+        "end": 18,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 17,
+        "end": 18,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี 1 เทอม 2",
+    "entities": [
+      {
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 11,
+        "confidence_entity": 0.999816358089447,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 17,
+        "end": 18,
+        "confidence_entity": 0.999868631362915,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี 2 เทอม 1",
+    "entities": [
+      {
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 17,
+        "end": 18,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 11,
+        "confidence_entity": 0.999816358089447,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 17,
+        "end": 18,
+        "confidence_entity": 0.999868631362915,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 17,
+        "end": 18,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 17,
+        "end": 18,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี 2 เทอม 2",
+    "entities": [
+      {
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 11,
+        "confidence_entity": 0.999816358089447,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 17,
+        "end": 18,
+        "confidence_entity": 0.999868631362915,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี หนึ่ง เทอม หนึ่ง",
+    "entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "หนึ่ง",
+        "entity": "year"
+      },
+      {
+        "start": 21,
+        "end": 26,
+        "value": "หนึ่ง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 15,
+        "confidence_entity": 0.9997426867485046,
+        "value": "หนึ่ง",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 21,
+        "end": 26,
+        "confidence_entity": 0.9998780488967896,
+        "value": "หนึ่ง",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 15,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 21,
+        "end": 26,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 15,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 21,
+        "end": 26,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี หนึ่ง เทอม สอง",
+    "entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "หนึ่ง",
+        "entity": "year"
+      },
+      {
+        "start": 21,
+        "end": 24,
+        "value": "สอง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 15,
+        "confidence_entity": 0.9990329742431641,
+        "value": "หนึ่ง",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 21,
+        "end": 24,
+        "confidence_entity": 0.9996931552886963,
+        "value": "สอง",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 15,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 21,
+        "end": 24,
+        "value": "สอง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 15,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 21,
+        "end": 24,
+        "value": "สอง",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี สอง เทอม หนึ่ง",
+    "entities": [
+      {
+        "start": 10,
+        "end": 13,
+        "value": "สอง",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 24,
+        "value": "หนึ่ง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 13,
+        "confidence_entity": 0.9999501705169678,
+        "value": "สอง",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 24,
+        "confidence_entity": 0.9999333620071411,
+        "value": "หนึ่ง",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 13,
+        "value": "สอง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 19,
+        "end": 24,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 13,
+        "value": "สอง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 24,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี สอง เทอม สอง",
+    "entities": [
+      {
+        "start": 10,
+        "end": 13,
+        "value": "สอง",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 22,
+        "value": "สอง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 13,
+        "confidence_entity": 0.9998906850814819,
+        "value": "สอง",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 22,
+        "confidence_entity": 0.9999028444290161,
+        "value": "สอง",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 13,
+        "value": "สอง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 19,
+        "end": 22,
+        "value": "สอง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 13,
+        "value": "สอง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 22,
+        "value": "สอง",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าลงทะเบียนเรียนปี1เทอม2",
+    "entities": [
+      {
+        "start": 19,
+        "end": 20,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 24,
+        "end": 25,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 19,
+        "end": 20,
+        "confidence_entity": 0.9972110390663147,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 24,
+        "end": 25,
+        "confidence_entity": 0.9994500279426575,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ค่าลงทะเบียนเรียนปี2เทอม2",
+    "entities": [
+      {
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 24,
+        "end": 25,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 19,
+        "end": 20,
+        "confidence_entity": 0.9972110390663147,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 24,
+        "end": 25,
+        "confidence_entity": 0.9994500279426575,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมซัมเมอร์ปี2",
+    "entities": [
+      {
+        "start": 7,
+        "end": 15,
+        "value": "ซัมเมอร์",
+        "entity": "term"
+      },
+      {
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "entity": "year"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "term",
+        "start": 7,
+        "end": 15,
+        "confidence_entity": 0.9993463158607483,
+        "value": "ซัมเมอร์",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 17,
+        "end": 18,
+        "confidence_entity": 0.9999109506607056,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมsummerปี2",
+    "entities": [
+      {
+        "start": 7,
+        "end": 13,
+        "value": "summer",
+        "entity": "term"
+      },
+      {
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "entity": "year"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "term",
+        "start": 7,
+        "end": 13,
+        "confidence_entity": 0.999220609664917,
+        "value": "summer",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 15,
+        "end": 16,
+        "confidence_entity": 0.9998898506164551,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ติดต่อจารพงศกร",
+    "entities": [
+      {
+        "start": 9,
+        "end": 14,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 9,
+        "end": 14,
+        "confidence_entity": 0.9997555613517761,
+        "value": "พงศกร",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ช่องทางติดต่อ พลกฤษณ์",
+    "entities": [
+      {
+        "start": 14,
+        "end": 21,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 14,
+        "end": 21,
+        "confidence_entity": 0.9997478127479553,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ช่องทางติดต่ออาจารย์ พลกฤษณ์",
+    "entities": [
+      {
+        "start": 21,
+        "end": 28,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 21,
+        "end": 28,
+        "confidence_entity": 0.9997649788856506,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ติดต่อ พลกฤษณ์",
+    "entities": [
+      {
+        "start": 7,
+        "end": 14,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 7,
+        "end": 14,
+        "confidence_entity": 0.9997194409370422,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ติดต่ออาจารย์พลกฤษณ์",
+    "entities": [
+      {
+        "start": 13,
+        "end": 20,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 13,
+        "end": 20,
+        "confidence_entity": 0.9997081160545349,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ติดต่อจารพลกฤษณ์",
+    "entities": [
+      {
+        "start": 9,
+        "end": 16,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 9,
+        "end": 16,
+        "confidence_entity": 0.9996941089630127,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ติดต่อจารย์ พลกฤษณ์",
+    "entities": [
+      {
+        "start": 12,
+        "end": 19,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 12,
+        "end": 19,
+        "confidence_entity": 0.9997445940971375,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ติดต่อครู พลกฤษณ์",
+    "entities": [
+      {
+        "start": 10,
+        "end": 17,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 10,
+        "end": 17,
+        "confidence_entity": 0.9997432827949524,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ช่องทางติดต่อครู พลกฤษณ์",
+    "entities": [
+      {
+        "start": 17,
+        "end": 24,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 17,
+        "end": 24,
+        "confidence_entity": 0.9997586607933044,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ช่องทางติดต่อจาร พลกฤษณ์",
+    "entities": [
+      {
+        "start": 17,
+        "end": 24,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 17,
+        "end": 24,
+        "confidence_entity": 0.9997383952140808,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ช่องทางติดต่อจาน พลกฤษณ์",
+    "entities": [
+      {
+        "start": 17,
+        "end": 24,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 17,
+        "end": 24,
+        "confidence_entity": 0.999763548374176,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ติดต่อจาน พลกฤษณ์",
+    "entities": [
+      {
+        "start": 10,
+        "end": 17,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 10,
+        "end": 17,
+        "confidence_entity": 0.9997480511665344,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "พงศกรสอนวิชาอะไรบ้าง",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.9995530247688293,
+        "value": "พงศกร",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "อาจารย์ พลกฤษณ์ สอนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 8,
+        "end": 15,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 8,
+        "end": 15,
+        "confidence_entity": 0.9997192025184631,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาทั้งหมดที่อาจารย์ พลกฤษณ์ สอน",
+    "entities": [
+      {
+        "start": 22,
+        "end": 29,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 22,
+        "end": 29,
+        "confidence_entity": 0.999819815158844,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาที่ พลกฤษณ์ สอน",
+    "entities": [
+      {
+        "start": 8,
+        "end": 15,
+        "value": "พลกฤษณ์",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tname",
+        "start": 8,
+        "end": 15,
+        "confidence_entity": 0.9997872710227966,
+        "value": "พลกฤษณ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาเรียนปี1เทอม1",
+    "entities": [
+      {
+        "start": 11,
+        "end": 12,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 16,
+        "end": 17,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 11,
+        "end": 12,
+        "confidence_entity": 0.9979363679885864,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 16,
+        "end": 17,
+        "confidence_entity": 0.9995406866073608,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาเรียนปี1เทอม2",
+    "entities": [
+      {
+        "start": 11,
+        "end": 12,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 16,
+        "end": 17,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 11,
+        "end": 12,
+        "confidence_entity": 0.9979363679885864,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 16,
+        "end": 17,
+        "confidence_entity": 0.9995406866073608,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาเรียนปี2เทอม1",
+    "entities": [
+      {
+        "start": 11,
+        "end": 12,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 16,
+        "end": 17,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 11,
+        "end": 12,
+        "confidence_entity": 0.9979363679885864,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 16,
+        "end": 17,
+        "confidence_entity": 0.9995406866073608,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาเรียนปี2เทอม2",
+    "entities": [
+      {
+        "start": 11,
+        "end": 12,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 16,
+        "end": 17,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 11,
+        "end": 12,
+        "confidence_entity": 0.9979363679885864,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 16,
+        "end": 17,
+        "confidence_entity": 0.9995406866073608,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาเรียนปี 1 เทอม 1",
+    "entities": [
+      {
+        "start": 12,
+        "end": 13,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 20,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 12,
+        "end": 13,
+        "confidence_entity": 0.9997768998146057,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 20,
+        "confidence_entity": 0.9998326301574707,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 12,
+        "end": 13,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 19,
+        "end": 20,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 12,
+        "end": 13,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 20,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาเรียนปี 1 เทอม 2",
+    "entities": [
+      {
+        "start": 12,
+        "end": 13,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 12,
+        "end": 13,
+        "confidence_entity": 0.9997768998146057,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 20,
+        "confidence_entity": 0.9998326301574707,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 12,
+        "end": 13,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 12,
+        "end": 13,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาเรียนปี 2 เทอม 1",
+    "entities": [
+      {
+        "start": 12,
+        "end": 13,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 20,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 12,
+        "end": 13,
+        "confidence_entity": 0.9997768998146057,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 20,
+        "confidence_entity": 0.9998326301574707,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 12,
+        "end": 13,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 19,
+        "end": 20,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 12,
+        "end": 13,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 20,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาเรียนปี 2 เทอม 2",
+    "entities": [
+      {
+        "start": 12,
+        "end": 13,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 12,
+        "end": 13,
+        "confidence_entity": 0.9997768998146057,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 20,
+        "confidence_entity": 0.9998326301574707,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 12,
+        "end": 13,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 12,
+        "end": 13,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาที่เรียนใน1เทอม1",
+    "entities": [
+      {
+        "start": 14,
+        "end": 15,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 20,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 14,
+        "end": 15,
+        "confidence_entity": 0.9994243383407593,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 20,
+        "confidence_entity": 0.9996017813682556,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาที่เรียนใน1เทอม2",
+    "entities": [
+      {
+        "start": 14,
+        "end": 15,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 14,
+        "end": 15,
+        "confidence_entity": 0.9994243383407593,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 19,
+        "end": 20,
+        "confidence_entity": 0.9996017813682556,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาที่เรียนใน 2 เทอม 1",
+    "entities": [
+      {
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 22,
+        "end": 23,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 15,
+        "end": 16,
+        "confidence_entity": 0.9994761347770691,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 22,
+        "end": 23,
+        "confidence_entity": 0.999487042427063,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 22,
+        "end": 23,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 22,
+        "end": 23,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาที่เรียนใน 2 เทอม 2",
+    "entities": [
+      {
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 22,
+        "end": 23,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 15,
+        "end": 16,
+        "confidence_entity": 0.9994761347770691,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 22,
+        "end": 23,
+        "confidence_entity": 0.999487042427063,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 22,
+        "end": 23,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 22,
+        "end": 23,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ปี 1 เทอม 1 เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 3,
+        "end": 4,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 3,
+        "end": 4,
+        "confidence_entity": 0.9989064931869507,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 11,
+        "confidence_entity": 0.9997841715812683,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 3,
+        "end": 4,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 3,
+        "end": 4,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ปี 1 เทอม 2 เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 3,
+        "end": 4,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 3,
+        "end": 4,
+        "confidence_entity": 0.9989064931869507,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 11,
+        "confidence_entity": 0.9997841715812683,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 3,
+        "end": 4,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 3,
+        "end": 4,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ปี 2 เทอม 1 เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 3,
+        "end": 4,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 3,
+        "end": 4,
+        "confidence_entity": 0.9989064931869507,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 11,
+        "confidence_entity": 0.9997841715812683,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 3,
+        "end": 4,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 3,
+        "end": 4,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ปี 2 เทอม 2 เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 3,
+        "end": 4,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 3,
+        "end": 4,
+        "confidence_entity": 0.9989064931869507,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 11,
+        "confidence_entity": 0.9997841715812683,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 3,
+        "end": 4,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 3,
+        "end": 4,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ปี1เทอม1เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 7,
+        "end": 8,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 2,
+        "end": 3,
+        "confidence_entity": 0.9997087121009827,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 7,
+        "end": 8,
+        "confidence_entity": 0.9999051094055176,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ปี1เทอม2เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 7,
+        "end": 8,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 2,
+        "end": 3,
+        "confidence_entity": 0.9997087121009827,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 7,
+        "end": 8,
+        "confidence_entity": 0.9999051094055176,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ปี2เทอม1เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 2,
+        "end": 3,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 7,
+        "end": 8,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 2,
+        "end": 3,
+        "confidence_entity": 0.9997087121009827,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 7,
+        "end": 8,
+        "confidence_entity": 0.9999051094055176,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ปี2เทอม2เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 2,
+        "end": 3,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 7,
+        "end": 8,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 2,
+        "end": 3,
+        "confidence_entity": 0.9997087121009827,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 7,
+        "end": 8,
+        "confidence_entity": 0.9999051094055176,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาการโปรแกรมคอมพิวเตอร์ เรียนเทอมไหน",
+    "entities": [
+      {
+        "start": 4,
+        "end": 25,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 เรียนเทอมไหน",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "confidence_entity": 0.9966323971748352,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาสมการเชิงอนุพันธ์เรียนเทอมไหน",
+    "entities": [
+      {
+        "start": 4,
+        "end": 21,
+        "value": "สมการเชิงอนุพันธ์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 4,
+        "end": 21,
+        "confidence_entity": 0.9998342990875244,
+        "value": "สมการเชิงอนุพันธ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาการโปรแกรมคอมพิวเตอร์ เรียนปีไหน",
+    "entities": [
+      {
+        "start": 4,
+        "end": 25,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 เรียนปีไหน",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "confidence_entity": 0.9964525699615479,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาสมการเชิงอนุพันธ์เรียนปีไหน",
+    "entities": [
+      {
+        "start": 4,
+        "end": 21,
+        "value": "สมการเชิงอนุพันธ์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 4,
+        "end": 21,
+        "confidence_entity": 0.9998331069946289,
+        "value": "สมการเชิงอนุพันธ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "สมการเชิงอนุพันธ์ เรียนปีไหน",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "value": "สมการเชิงอนุพันธ์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 17,
+        "confidence_entity": 0.9998258948326111,
+        "value": "สมการเชิงอนุพันธ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "สมการเชิงอนุพันธ์ เรียนเทอมไหน",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "value": "สมการเชิงอนุพันธ์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 17,
+        "confidence_entity": 0.9998288154602051,
+        "value": "สมการเชิงอนุพันธ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 เรียนเมื่อไหร่",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "confidence_entity": 0.9957401752471924,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1 เรียนช่วงไหน",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.9723750948905945,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 13,
+        "end": 14,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 13,
+        "end": 14,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1 เปิดสอนในเทอมใด",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.9740307331085205,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 13,
+        "end": 14,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 13,
+        "end": 14,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "เทอมไหนเปิดสอนวิชา การโปรแกรมคอมพิวเตอร์",
+    "entities": [
+      {
+        "start": 19,
+        "end": 40,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 19,
+        "end": 40,
+        "confidence_entity": 0.9997403025627136,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชา การโปรแกรมคอมพิวเตอร์ เรียนในปีการศึกษาไหน",
+    "entities": [
+      {
+        "start": 5,
+        "end": 26,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 26,
+        "confidence_entity": 0.9998582601547241,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 สอนในเทอมไหน",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "confidence_entity": 0.9970878958702087,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1 เรียนปีการศึกษาใด",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.9718195199966431,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 13,
+        "end": 14,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 13,
+        "end": 14,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "เทอมไหนสอนวิชา การโปรแกรมคอมพิวเตอร์",
+    "entities": [
+      {
+        "start": 15,
+        "end": 36,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 15,
+        "end": 36,
+        "confidence_entity": 0.999743640422821,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชา การโปรแกรมคอมพิวเตอร์ เปิดเทอมไหน",
+    "entities": [
+      {
+        "start": 5,
+        "end": 26,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 26,
+        "confidence_entity": 0.9998679161071777,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชา สมการเชิงอนุพันธ์ สอนปีไหน",
+    "entities": [
+      {
+        "start": 5,
+        "end": 22,
+        "value": "สมการเชิงอนุพันธ์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 22,
+        "confidence_entity": 0.9998267292976379,
+        "value": "สมการเชิงอนุพันธ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาการโปรแกรมคอมพิวเตอร์เรียนภาษาอะไร",
+    "entities": [
+      {
+        "start": 4,
+        "end": 25,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "วิชาการโปรแกรมคอมพิวเตอร์เรียนเป็นภาษาอะไร",
+    "entities": [
+      {
+        "start": 4,
+        "end": 25,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "การโปรแกรมคอมพิวเตอร์ เรียนเป็นภาษาอะไร",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 21,
+        "confidence_entity": 0.9997380375862122,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชา การโปรแกรมคอมพิวเตอร์ เรียนภาษาไทยหรืออังกฤษ",
+    "entities": [
+      {
+        "start": 5,
+        "end": 26,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 26,
+        "confidence_entity": 0.9998390674591064,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาการโปรแกรมคอมพิวเตอร์เรียนภาษาไทยหรืออังกฤษ",
+    "entities": [
+      {
+        "start": 4,
+        "end": 25,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "วิชา การเขียนโปรแกรม ใช้ภาษาอะไรในการสอน",
+    "entities": [
+      {
+        "start": 5,
+        "end": 20,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 20,
+        "confidence_entity": 0.9999538660049438,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "การเขียนโปรแกรม เรียนด้วยภาษาไหน",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 15,
+        "confidence_entity": 0.9999370574951172,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชา การเขียนโปรแกรม สอนด้วยภาษาอะไร",
+    "entities": [
+      {
+        "start": 5,
+        "end": 20,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 20,
+        "confidence_entity": 0.9999542236328125,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชา สมการเชิงอนุพันธ์ สอนเป็นภาษาไทยหรืออังกฤษ",
+    "entities": [
+      {
+        "start": 5,
+        "end": 22,
+        "value": "สมการเชิงอนุพันธ์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 22,
+        "confidence_entity": 0.9998358488082886,
+        "value": "สมการเชิงอนุพันธ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 เรียนเป็นภาษาไทยหรือเปล่า",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "confidence_entity": 0.9940909743309021,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1 สอนเป็นภาษาอะไร",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.9722364544868469,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 13,
+        "end": 14,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 13,
+        "end": 14,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชา การโปรแกรมคอมพิวเตอร์ ใช้ภาษาไทยหรืออังกฤษ",
+    "entities": [
+      {
+        "start": 5,
+        "end": 26,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 26,
+        "confidence_entity": 0.9998444318771362,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชา การเขียนโปรแกรม เรียนเป็นภาษาอังกฤษหรือไม่",
+    "entities": [
+      {
+        "start": 5,
+        "end": 20,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 20,
+        "confidence_entity": 0.9999533891677856,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "สมการเชิงอนุพันธ์ เรียนภาษาอะไร",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "value": "สมการเชิงอนุพันธ์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 17,
+        "confidence_entity": 0.9998284578323364,
+        "value": "สมการเชิงอนุพันธ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1 สอนด้วยภาษาไทยไหม",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.9725702404975891,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 13,
+        "end": 14,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 13,
+        "end": 14,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาการเขียนโปรแกรมใช้ภาษาอะไรในการสอน",
+    "entities": [
+      {
+        "start": 4,
+        "end": 19,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 4,
+        "end": 19,
+        "confidence_entity": 0.9999537467956543,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "การเขียนโปรแกรมเรียนด้วยภาษาไหน",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 15,
+        "confidence_entity": 0.9999393224716187,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาการเขียนโปรแกรมสอนด้วยภาษาอะไร",
+    "entities": [
+      {
+        "start": 4,
+        "end": 19,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 4,
+        "end": 19,
+        "confidence_entity": 0.999951958656311,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาสมการเชิงอนุพันธ์สอนเป็นภาษาไทยหรืออังกฤษ",
+    "entities": [
+      {
+        "start": 4,
+        "end": 21,
+        "value": "สมการเชิงอนุพันธ์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 4,
+        "end": 21,
+        "confidence_entity": 0.9998313188552856,
+        "value": "สมการเชิงอนุพันธ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาโครงการพิเศษ 1เรียนเป็นภาษาไทยหรือเปล่า",
+    "entities": [
+      {
+        "start": 4,
+        "end": 18,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 4,
+        "end": 18,
+        "confidence_entity": 0.9972065091133118,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1สอนเป็นภาษาอะไร",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.9714303612709045,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาการโปรแกรมคอมพิวเตอร์ใช้ภาษาไทยหรืออังกฤษ",
+    "entities": [
+      {
+        "start": 4,
+        "end": 25,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "วิชาการเขียนโปรแกรมเรียนเป็นภาษาอังกฤษหรือไม่",
+    "entities": [
+      {
+        "start": 4,
+        "end": 19,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 4,
+        "end": 19,
+        "confidence_entity": 0.9999533891677856,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1สอนด้วยภาษาไทยไหม",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.9719681143760681,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาการโปรแกรมคอมพิวเตอร์มีกี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 4,
+        "end": 25,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "วิชา การโปรแกรมคอมพิวเตอร์ มีกี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 5,
+        "end": 26,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 26,
+        "confidence_entity": 0.9998737573623657,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "การโปรแกรมคอมพิวเตอร์ มีกี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 21,
+        "confidence_entity": 0.9998493194580078,
+        "value": "การโปรแกรมคอมพิวเตอร์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชา การเขียนโปรแกรม มีหน่วยกิตเท่าไหร่",
+    "entities": [
+      {
+        "start": 5,
+        "end": 20,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 20,
+        "confidence_entity": 0.999954104423523,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "การเขียนโปรแกรม ได้กี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 15,
+        "confidence_entity": 0.9999486207962036,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชา สมการเชิงอนุพันธ์ มีหน่วยกิตกี่หน่วย",
+    "entities": [
+      {
+        "start": 5,
+        "end": 22,
+        "value": "สมการเชิงอนุพันธ์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 22,
+        "confidence_entity": 0.9998315572738647,
+        "value": "สมการเชิงอนุพันธ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 ได้หน่วยกิตกี่หน่วย",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "confidence_entity": 0.9953930377960205,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 มีกี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "confidence_entity": 0.9972594976425171,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "สมการเชิงอนุพันธ์ มีหน่วยกิตเท่าไหร่",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "value": "สมการเชิงอนุพันธ์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 17,
+        "confidence_entity": 0.9998261332511902,
+        "value": "สมการเชิงอนุพันธ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1 ได้กี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.9721398949623108,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 13,
+        "end": 14,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 13,
+        "end": 14,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชา สมการเชิงอนุพันธ์ มีทั้งหมดกี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 5,
+        "end": 22,
+        "value": "สมการเชิงอนุพันธ์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 5,
+        "end": 22,
+        "confidence_entity": 0.9998311996459961,
+        "value": "สมการเชิงอนุพันธ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "หน่วยกิตของวิชา โครงการพิเศษ 1 มีกี่หน่วย",
+    "entities": [
+      {
+        "start": 16,
+        "end": 30,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 16,
+        "end": 30,
+        "confidence_entity": 0.9903435707092285,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 29,
+        "end": 30,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 29,
+        "end": 30,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "sname",
+        "start": 16,
+        "end": 30,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "การเขียนโปรแกรม มีกี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 15,
+        "confidence_entity": 0.9999516010284424,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาการเขียนโปรแกรมมีหน่วยกิตเท่าไหร่",
+    "entities": [
+      {
+        "start": 4,
+        "end": 19,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 4,
+        "end": 19,
+        "confidence_entity": 0.9999549388885498,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "การเขียนโปรแกรมได้กี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 15,
+        "confidence_entity": 0.9999523162841797,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาสมการเชิงอนุพันธ์มีหน่วยกิตกี่หน่วย",
+    "entities": [
+      {
+        "start": 4,
+        "end": 21,
+        "value": "สมการเชิงอนุพันธ์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 4,
+        "end": 21,
+        "confidence_entity": 0.9998377561569214,
+        "value": "สมการเชิงอนุพันธ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาโครงการพิเศษ 1ได้หน่วยกิตกี่หน่วย",
+    "entities": [
+      {
+        "start": 4,
+        "end": 18,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 4,
+        "end": 18,
+        "confidence_entity": 0.9986670017242432,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาโครงการพิเศษ 1มีกี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 4,
+        "end": 18,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 4,
+        "end": 18,
+        "confidence_entity": 0.9985343217849731,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1ได้กี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.9716281294822693,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "วิชาสมการเชิงอนุพันธ์มีทั้งหมดกี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 4,
+        "end": 21,
+        "value": "สมการเชิงอนุพันธ์",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 4,
+        "end": 21,
+        "confidence_entity": 0.9998358488082886,
+        "value": "สมการเชิงอนุพันธ์",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "หน่วยกิตของวิชาโครงการพิเศษ 1มีกี่หน่วย",
+    "entities": [
+      {
+        "start": 15,
+        "end": 29,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 15,
+        "end": 29,
+        "confidence_entity": 0.9967251420021057,
+        "value": "โครงการพิเศษ 1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "การเขียนโปรแกรมมีกี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "sname",
+        "start": 0,
+        "end": 15,
+        "confidence_entity": 0.9999507665634155,
+        "value": "การเขียนโปรแกรม",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "1+1 ได้เท่าไหร่",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9998195767402649,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "2 + 2 =",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 4,
+        "end": 5,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9998456239700317,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 4,
+        "end": 5,
+        "confidence_entity": 0.9999152421951294,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 4,
+        "end": 5,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 4,
+        "end": 5,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "2+หนึ่ง",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 2,
+        "end": 7,
+        "value": "หนึ่ง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9999010562896729,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 2,
+        "end": 7,
+        "confidence_entity": 0.9999712705612183,
+        "value": "หนึ่ง",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 2,
+        "end": 7,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 2,
+        "end": 7,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "1-1 ได้เท่าไหร่",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9998433589935303,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 2,
+        "end": 3,
+        "confidence_entity": 0.9998800754547119,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "2 - 2 =",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 4,
+        "end": 5,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9998488426208496,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 4,
+        "end": 5,
+        "confidence_entity": 0.9999393224716187,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 4,
+        "end": 5,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 4,
+        "end": 5,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "2-หนึ่ง",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 2,
+        "end": 7,
+        "value": "หนึ่ง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9998891353607178,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 2,
+        "end": 7,
+        "confidence_entity": 0.9999754428863525,
+        "value": "หนึ่ง",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 2,
+        "end": 7,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 2,
+        "end": 7,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "1*1 ได้เท่าไหร่",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9998160004615784,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "2 * 2 =",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 4,
+        "end": 5,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9998513460159302,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 4,
+        "end": 5,
+        "confidence_entity": 0.9999083280563354,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 4,
+        "end": 5,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 4,
+        "end": 5,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "2*หนึ่ง",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 2,
+        "end": 7,
+        "value": "หนึ่ง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9999135732650757,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "term",
+        "start": 2,
+        "end": 7,
+        "confidence_entity": 0.9999713897705078,
+        "value": "หนึ่ง",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "year",
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "year",
+        "start": 2,
+        "end": 7,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "term",
+        "start": 2,
+        "end": 7,
+        "value": "หนึ่ง",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  }
+]

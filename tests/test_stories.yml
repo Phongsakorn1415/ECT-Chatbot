@@ -1,91 +1,80 @@
-#### This file contains tests to evaluate that your bot behaves as expected.
-#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
-
-stories:
-- story: happy path 1
+stories: 
+- story: says hi
   steps:
-  - user: |
-      hello there!
-    intent: greet
+  - intent: greet
   - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
 
-- story: happy path 2
+- story: says goodbye
   steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
+  - intent: goodbye
   - action: utter_goodbye
 
-- story: sad path 1
+- story: Tell All Term Price
   steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
+  - intent: ask_term_price_all
+  - action: action_term_price_all
 
-- story: sad path 2
+- story: Tell One Term Price
   steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
+  - intent: ask_term_price_one
+  - action: action_term_price_one
 
-- story: sad path 3
+- story: Tell Late Fees
   steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
+  - intent: ask_term_late_fees
+  - action: action_term_late_fees
 
-- story: say goodbye
+- story: Tell All Teacher Name
   steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+  - intent: ask_teacher_all
+  - action: action_teacher_all
 
-- story: bot challenge
+- story: Tell Teacher Contact
   steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
+  - intent: ask_teacher_contact
+  - action: action_teacher_contact
+
+- story: Tell Teacher Contact
+  steps:
+  - intent: ask_teacher_teach
+  - action: action_teacher_teach
+
+- story: Tell all Required Subject
+  steps:
+  - intent: ask_required_subject
+  - action: action_required_subject
+
+- story: Tell all Elective Subject
+  steps:
+  - intent: ask_elective_subject
+  - action: action_elective_subject
+
+- story: Tell Elective Subject Only One Term
+  steps:
+  - intent: ask_subject_one_term
+  - action: action_subject_one_term
+
+- story: Tell Term That Learn That Subject
+  steps:
+  - intent: ask_subject_education_term
+  - action: action_subject_education_term
+
+- story: Tell Subject Language
+  steps:
+  - intent: ask_subject_language
+  - action: action_subject_language
+
+- story: Tell Subject Credit
+  steps:
+  - intent: ask_subject_credit
+  - action: action_subject_credit
+
+- story: Fall Back
+  steps:
+  - intent: nlu_fallback
+  - action: action_fallback
+
+- story: Fall Back out of scope
+  steps:
+  - intent: out_of_scope
+  - action: action_fallback
