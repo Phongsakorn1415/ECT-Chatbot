@@ -1,0 +1,15 @@
+{
+    "database_config": {
+      "host": "localhost",
+      "user": "root",
+      "password": "",
+      "database": "ect_chatbot"
+    },
+    "database_queries": {
+      "year": "SELECT year FROM education_year;",
+      "term": "SELECT term FROM education_year;",
+      "tname": "SELECT name FROM user WHERE role = 't';",
+      "sname": "SELECT name FROM subject;"
+    },
+    "minimumConfidence": 0.81
+  }

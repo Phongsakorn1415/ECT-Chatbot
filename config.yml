@@ -19,8 +19,8 @@ pipeline:
   max_ngram: 4
 - name: DIETClassifier
   epochs: 200
-- name: RegexEntityExtractor
-  use_lookup_tables: True
+- name: custom_entity_extractor.CustomEntityExtractor
+  config: "custom_entity_extract_Config.json"
 - name: FallbackClassifier
   threshold: 0.9
   ambiguity_threshold: 0.1
