@@ -20,7 +20,10 @@ pipeline:
 - name: DIETClassifier
   epochs: 200
 - name: custom_entity_extractor.CustomEntityExtractor
-  config: "custom_entity_extract_Config.json"
+  queries: |
+    - year: SELECT year FROM education_year;
+    - term: SELECT term FROM education_year;
+  minimumConfidence: 0.8
 - name: FallbackClassifier
   threshold: 0.9
   ambiguity_threshold: 0.1

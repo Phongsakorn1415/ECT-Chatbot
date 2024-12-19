@@ -1,9 +1,10 @@
 to make this project work you have to install (Windows)
 - python 3.10
 - Virtual Environment (optional)
-- RASA
+- RASA 3.x
 - pythainlp
 - spacy
+- fuzzyset2
 
 How to install Virtual Environment (optional)
   Use the command below to install virtual envaronment 
@@ -30,3 +31,7 @@ How to install spacy
   Use the command below to install spacy
 
             pip install spacy
+
+How to install fuzzyset2
+  Use the command below to install fuzzyset2
+            pip install fuzzyset2
