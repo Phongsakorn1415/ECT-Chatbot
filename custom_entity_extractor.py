@@ -1,5 +1,5 @@
 import logging
-import mariadb
+
 from typing import Any, Dict, List, Text
 
 from rasa.engine.graph import GraphComponent, ExecutionContext
@@ -9,6 +9,7 @@ from rasa.engine.storage.storage import ModelStorage
 from rasa.shared.nlu.training_data.message import Message
 from rasa.shared.nlu.training_data.training_data import TrainingData
 
+import mariadb
 try:
     from cfuzzyset import cFuzzySet as FuzzySet
 except ImportError:
@@ -20,9 +21,12 @@ logger = logging.getLogger(__name__)
     DefaultV1Recipe.ComponentType.ENTITY_EXTRACTOR, is_trainable=False
 )
 class CustomEntityExtractor(GraphComponent):
-    def __init__(self, component_config: Dict[Text, Any]):
-        self.queries = component_config.get("queries", {})
-        self.minimum_confidence = component_config.get("minimumConfidence", 0.8)
+    def __init__(self, config: Dict[Text, Any]):
+        self.queries = {
+            "tname" : "SELECT name FROM user WHERE role = 't';",
+            "sname" : "SELECT name FROM subject;"
+        }
+        self.minimum_confidence = config.get("minimumConfidence", 0.8)
         self.fuzzy_sets = {}
 
     @classmethod
@@ -35,12 +39,11 @@ class CustomEntityExtractor(GraphComponent):
         return cls(config)
 
     def train(self, training_data: TrainingData) -> Resource:
-        # ไม่จำเป็นต้อง train ใน component นี้
         pass
     
     def process(self, messages: List[Message]) -> List[Message]:
         for message in messages:
-            text = message.get("text") # ข้อความที่ผ่าน tokenizer แล้ว
+            text = message.get("text")
             entities = []
             for entity_type, query in self.queries.items():
                 try:
@@ -52,7 +55,7 @@ class CustomEntityExtractor(GraphComponent):
                     )
                     cursor = conn.cursor()
                     cursor.execute(query)
-                    data = [row[0] for row in cursor]
+                    data = cursor.fetchall()
                     conn.close()
 
                     if entity_type not in self.fuzzy_sets:
