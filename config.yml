@@ -19,10 +19,14 @@ pipeline:
   max_ngram: 4
 - name: DIETClassifier
   epochs: 200
+<<<<<<< HEAD
+- name: ECTEntityExtractor.CustomEntityExtractor
+=======
 - name: custom_entity_extractor.CustomEntityExtractor
   queries: |
-    - tname : SELECT name FROM user WHERE role = 't';
-    - sname : SELECT name FROM subject;
+    - year: SELECT year FROM education_year;
+    - term: SELECT term FROM education_year;
+>>>>>>> parent of 071aa59 (Update custom_entity_extractor.py (Not working)))
   minimumConfidence: 0.8
 - name: FallbackClassifier
   threshold: 0.9
