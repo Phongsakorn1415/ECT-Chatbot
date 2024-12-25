@@ -1,19 +1,26 @@
-import logging
-
-from typing import Any, Dict, List, Text
-
-from rasa.engine.graph import GraphComponent, ExecutionContext
-from rasa.engine.recipes.default_recipe import DefaultV1Recipe
-from rasa.engine.storage.resource import Resource
-from rasa.engine.storage.storage import ModelStorage
-from rasa.shared.nlu.training_data.message import Message
-from rasa.shared.nlu.training_data.training_data import TrainingData
-
 import mariadb
 try:
     from cfuzzyset import cFuzzySet as FuzzySet
 except ImportError:
     from fuzzyset import FuzzySet
+
+import logging
+from typing import Any, Text, Dict, List, Type
+from rasa.engine.recipes.default_recipe import DefaultV1Recipe
+from rasa.engine.graph import ExecutionContext, GraphComponent
+from rasa.engine.storage.resource import Resource
+from rasa.engine.storage.storage import ModelStorage
+from rasa.shared.nlu.training_data.training_data import TrainingData
+from rasa.nlu.extractors.extractor import EntityExtractorMixin
+from rasa.shared.nlu.training_data.message import Message
+from rasa.shared.nlu.constants import (
+    TEXT,
+    ENTITY_ATTRIBUTE_TYPE,
+    ENTITY_ATTRIBUTE_START,
+    ENTITY_ATTRIBUTE_END,
+    ENTITY_ATTRIBUTE_VALUE,
+    ENTITIES,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +28,21 @@ logger = logging.getLogger(__name__)
     DefaultV1Recipe.ComponentType.ENTITY_EXTRACTOR, is_trainable=False
 )
 class CustomEntityExtractor(GraphComponent):
-    def __init__(self, config: Dict[Text, Any]):
+    @classmethod
+    def required_components(cls) -> List[Type]:
+        return []
+
+    @staticmethod
+    def required_packages() -> List[Text]:
+        return ["mariadb", "fuzzyset"]
+
+    def __init__(
+        self,
+        config: Dict[Text, Any],
+        name: Text,
+        model_storage: ModelStorage,
+        resource: Resource,
+    ) -> None:
         self.dbConfig = {
             "host" : "localhost",
             "user" : "root",
@@ -36,6 +57,9 @@ class CustomEntityExtractor(GraphComponent):
         self.minimum_confidence = config.get("minimumConfidence", 0.8)
         self.fuzzy_sets = {}
         self._get_entity_groups(self.dbConfig, self.queries)
+        
+    def train(self, training_data: TrainingData) -> Resource:
+        pass
 
     @classmethod
     def create(
@@ -43,20 +67,15 @@ class CustomEntityExtractor(GraphComponent):
         config: Dict[Text, Any],
         model_storage: ModelStorage,
         resource: Resource,
+        execution_context: ExecutionContext,
     ) -> GraphComponent:
-        return cls(config)
+        return cls(config, execution_context.node_name, model_storage, resource)
 
-    def train(self, training_data: TrainingData) -> Resource:
-        pass
-    
+
     def process(self, messages: List[Message]) -> List[Message]:
         extracted = self.match_entities(messages)
         messages.set("entities", messages.get("entities", []) + extracted, add_to_output=True)
         return messages
-
-    @classmethod
-    def required_packages(cls) -> List[Text]:
-        return ["mariadb", "fuzzyset"]
     
     def _get_entity_groups(self, database_config: Dict[Text, Text], database_queries: Dict[Text, Text]):
         db = mariadb.connect(

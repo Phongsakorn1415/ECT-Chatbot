@@ -12,7 +12,7 @@ queries = {
 minimum_confidence = 0.8
 fuzzy_sets = {}
 
-message = "วิชาโครงการ 2 กี่หน่วยกิต"
+message = "วิชาการโปรแกรมเครือข่ายกี่หน่วยกิต"
 words = word_tokenize(message,keep_whitespace=False)
 
 print(words)
@@ -33,30 +33,32 @@ entities = []
 cur = db.cursor()
 print(f"Queries are: {queries.keys()}")
 for entity_key in queries.keys():
-#     print(queries[entity_key])
     cur.execute(queries[entity_key])
     current_entity = FuzzySet()
-    for row in cur.fetchall():
+    result = cur.fetchall()
+    for row in result:
         if len(row) != 1: print("{entity_key}: query returned more than one column!")
         current_entity.add(row[0])
     fuzzy_sets[entity_key] = current_entity
 db.close()
 
 extracted_entities = []
-tokens = words
-for token in tokens:
+
+import itertools
+for token in words:
     for entity_type in fuzzy_sets.keys():
         fuzzy_matches = fuzzy_sets[entity_type].get(token)
         print(fuzzy_matches)
-        for match in fuzzy_matches:
-            if match[0] < minimum_confidence: continue
-            entity = {
-                "start": token.start,
-                "end": token.end,
-                "value": match[1],
-                "confidence": match[0],
-                "entity": entity_type,
-            }
-            extracted_entities.append(entity)
+        if fuzzy_matches is not None:
+            for match in fuzzy_matches:
+                if match[0] < minimum_confidence: continue
+                entity = {
+                    # "start": token.start,
+                    # "end": token.end,
+                    "value": match[1],
+                    "confidence": match[0],
+                    "entity": entity_type,
+                }
+                extracted_entities.append(entity)
 
 print(extracted_entities)
