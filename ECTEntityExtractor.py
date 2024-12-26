@@ -104,11 +104,12 @@ class CustomEntityExtractor(GraphComponent):
                 for match in fuzzy_matches:
                     if match[0] < self.minimum_confidence: continue
                     entity = {
-                        "start": token.start,
-                        "end": token.end,
-                        "value": match[1],
+                        ENTITY_ATTRIBUTE_START: None,
+                        ENTITY_ATTRIBUTE_END: None,
+                        ENTITY_ATTRIBUTE_VALUE: match[1],
+                        ENTITY_ATTRIBUTE_TYPE: entity_type,
                         "confidence": match[0],
-                        "entity": entity_type,
+                        "extractor": "MyCustomEntityExtractor"
                     }
                     extracted_entities.append(entity)    
         return extracted_entities
