@@ -17,10 +17,12 @@ pipeline:
   analyzer: char_wb
   min_ngram: 1
   max_ngram: 4
+- name: ECTEntityExtractor.CustomEntityExtractor
+  minimumConfidence: 0.4
 - name: DIETClassifier
   epochs: 200
-- name: ECTEntityExtractor.CustomEntityExtractor
-  minimumConfidence: 0.8
+  intent_classification: True
+  entity_recognition: False
 - name: FallbackClassifier
   threshold: 0.9
   ambiguity_threshold: 0.1

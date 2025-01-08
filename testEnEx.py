@@ -9,10 +9,11 @@ queries = {
             "tname" : "SELECT name FROM user WHERE role = 't';",
             "sname" : "SELECT name FROM subject;"
         }
-minimum_confidence = 0.8
+minimum_confidence = 0.4
 fuzzy_sets = {}
 
-message = "วิชาการโปรแกรมเครือข่ายกี่หน่วยกิต"
+message = "วิชาโครงการ1เรียนวันไหน"
+# message = "วิชาการโปรแกรมเครือข่ายกี่หน่วยกิต"
 words = word_tokenize(message,keep_whitespace=False)
 
 print(words)
