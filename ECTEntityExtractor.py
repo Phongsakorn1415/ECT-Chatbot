@@ -75,7 +75,7 @@ class CustomEntityExtractor(GraphComponent):
     def process(self, messages: List[Message]) -> List[Message]:
         for message in messages:
             extracted = self.match_entities(message)
-            message.set(ENTITIES, message.get(ENTITIES, []) + extracted, add_to_output=True)
+            message.set("entities", message.get("entities", []) + extracted, add_to_output=True)
         return messages
     
     def _get_entity_groups(self, database_config: Dict[Text, Text], database_queries: Dict[Text, Text]):
@@ -98,21 +98,25 @@ class CustomEntityExtractor(GraphComponent):
 
     def match_entities(self, message: Message):
         extracted_entities = []
-        tokens = message.get(TEXT)
-        print("Token = " + tokens)
-        for token in tokens:
-            for entity_type in self.fuzzy_sets.keys():
-                fuzzy_matches = self.fuzzy_sets[entity_type].get(token)
-                if fuzzy_matches is not None:
-                    for match in fuzzy_matches:
-                        if match[0] < self.minimum_confidence: continue
-                        entity = {
-                            "start": token.start,
-                            "end": token.ende,
-                            "value": match[1],
-                            "entity": entity_type,
-                            "confidence": match[0],
-                            "extractor": "ECTEntityExtractor"
-                        }
-                        extracted_entities.append(entity)    
+        # tokens = message.get(TEXT)
+        # from pythainlp import word_tokenize
+        # tokens = word_tokenize(message.get(TEXT),keep_whitespace=False)
+        # print("Token = " + tokens)
+        tokens = message.get("tokens")
+        if tokens is not None:
+            for token in tokens or []:
+                for entity_type in self.fuzzy_sets.keys():
+                    fuzzy_matches = self.fuzzy_sets[entity_type].get(token)
+                    if fuzzy_matches is not None:
+                        for match in fuzzy_matches:
+                            if match[0] < self.minimum_confidence: continue
+                            entity = {
+                                "start": token.start,
+                                "end": token.end,
+                                "value": match[1],
+                                "entity": entity_type,
+                                "confidence": match[0],
+                                "extractor": "ECTEntityExtractor"
+                            }
+                            extracted_entities.append(entity)    
         return extracted_entities
