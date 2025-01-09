@@ -15,6 +15,7 @@ from rasa.nlu.extractors.extractor import EntityExtractorMixin
 from rasa.shared.nlu.training_data.message import Message
 from rasa.shared.nlu.constants import (
     TEXT,
+    TEXT_TOKENS,
     ENTITY_ATTRIBUTE_TYPE,
     ENTITY_ATTRIBUTE_START,
     ENTITY_ATTRIBUTE_END,
@@ -98,11 +99,11 @@ class CustomEntityExtractor(GraphComponent):
 
     def match_entities(self, message: Message):
         extracted_entities = []
-        # tokens = message.get(TEXT)
-        # from pythainlp import word_tokenize
-        # tokens = word_tokenize(message.get(TEXT),keep_whitespace=False)
+        tokens = message.get(TEXT)
+        from pythainlp import word_tokenize
+        tokens = word_tokenize(message.get(TEXT),keep_whitespace=False)
         # print("Token = " + tokens)
-        tokens = message.get("tokens")
+        # tokens = message.get(TEXT_TOKENS)
         if tokens is not None:
             for token in tokens:
                 print(token + "\n")
@@ -111,10 +112,10 @@ class CustomEntityExtractor(GraphComponent):
                     if fuzzy_matches is not None:
                         for match in fuzzy_matches:
                             if match[0] < self.minimum_confidence: continue
-                            print("Entity : " + match[1] + " => " + match[0] + " confidence")
+                            print("Entity : " + match[1] + " => " + str(match[0]) + " confidence")
                             entity = {
-                                "start": token.start,
-                                "end": token.end,
+                                "start": None,
+                                "end": None,
                                 "value": match[1],
                                 "entity": entity_type,
                                 "confidence": match[0],
