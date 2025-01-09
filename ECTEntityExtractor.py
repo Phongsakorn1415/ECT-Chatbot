@@ -104,12 +104,14 @@ class CustomEntityExtractor(GraphComponent):
         # print("Token = " + tokens)
         tokens = message.get("tokens")
         if tokens is not None:
-            for token in tokens or []:
+            for token in tokens:
+                print(token + "\n")
                 for entity_type in self.fuzzy_sets.keys():
                     fuzzy_matches = self.fuzzy_sets[entity_type].get(token)
                     if fuzzy_matches is not None:
                         for match in fuzzy_matches:
                             if match[0] < self.minimum_confidence: continue
+                            print("Entity : " + match[1] + " => " + match[0] + " confidence")
                             entity = {
                                 "start": token.start,
                                 "end": token.end,
