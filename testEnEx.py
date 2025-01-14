@@ -9,12 +9,12 @@ queries = {
             "tname" : "SELECT name FROM user WHERE role = 't';",
             "sname" : "SELECT name FROM subject;"
         }
-minimum_confidence = 0.4
+minimum_confidence = 0.3
 fuzzy_sets = {}
 
-message = "วิชาโครงการ1เรียนวันไหน"
+message = "วิชาลีนุกซ์มีกี่หน่วยกิต"
 # message = "วิชาการโปรแกรมเครือข่ายกี่หน่วยกิต"
-words = word_tokenize(message,keep_whitespace=False)
+words = word_tokenize(message)
 
 print(words)
 
@@ -46,20 +46,24 @@ db.close()
 extracted_entities = []
 
 import itertools
-for token in words:
-    for entity_type in fuzzy_sets.keys():
-        fuzzy_matches = fuzzy_sets[entity_type].get(token)
-        print(fuzzy_matches)
-        if fuzzy_matches is not None:
-            for match in fuzzy_matches:
-                if match[0] < minimum_confidence: continue
-                entity = {
-                    # "start": token.start,
-                    # "end": token.end,
-                    "value": match[1],
-                    "confidence": match[0],
-                    "entity": entity_type,
-                }
-                extracted_entities.append(entity)
+for token in range(len(words)):
+    curToken = words[token]
+    for tokenI in range(token + 1, len(words)):
+        curToken += words[tokenI]
+        print(curToken)
+        for entity_type in fuzzy_sets.keys():
+            fuzzy_matches = fuzzy_sets[entity_type].get(words[tokenI])
+            print(fuzzy_matches)
+            if fuzzy_matches is not None:
+                for match in fuzzy_matches:
+                    if match[0] < minimum_confidence: continue
+                    entity = {
+                        # "start": token.start,
+                        # "end": token.end,
+                        "value": match[1],
+                        "confidence": match[0],
+                        "entity": entity_type,
+                    }
+                    extracted_entities.append(entity)
 
 print(extracted_entities)

@@ -105,21 +105,24 @@ class CustomEntityExtractor(GraphComponent):
         # print("Token = " + tokens)
         # tokens = message.get(TEXT_TOKENS)
         if tokens is not None:
-            for token in tokens:
-                print(token + "\n")
-                for entity_type in self.fuzzy_sets.keys():
-                    fuzzy_matches = self.fuzzy_sets[entity_type].get(token)
-                    if fuzzy_matches is not None:
-                        for match in fuzzy_matches:
-                            if match[0] < self.minimum_confidence: continue
-                            print("Entity : " + match[1] + " => " + str(match[0]) + " confidence")
-                            entity = {
-                                "start": None,
-                                "end": None,
-                                "value": match[1],
-                                "entity": entity_type,
-                                "confidence": match[0],
-                                "extractor": "ECTEntityExtractor"
-                            }
-                            extracted_entities.append(entity)    
+            for tokenindex in range(len(tokens)):
+                tokencurrent = tokens[tokenindex]
+                for tokenindex2 in range(tokenindex + 1, len(tokens)):
+                    tokencurrent += tokens[tokenindex2]
+                    print(tokencurrent + "\n")
+                    for entity_type in self.fuzzy_sets.keys():
+                        fuzzy_matches = self.fuzzy_sets[entity_type].get(tokencurrent)
+                        if fuzzy_matches is not None:
+                            for match in fuzzy_matches:
+                                if match[0] > self.minimum_confidence:
+                                    print("Entity : " + match[1] + " => " + str(match[0]) + " confidence")
+                                    entity = {
+                                        "start": None,
+                                        "end": None,
+                                        "value": match[1],
+                                        "entity": entity_type,
+                                        "confidence": match[0],
+                                        "extractor": "ECTEntityExtractor"
+                                    }
+                                    extracted_entities.append(entity)    
         return extracted_entities
