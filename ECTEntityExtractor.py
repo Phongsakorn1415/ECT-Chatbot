@@ -15,12 +15,12 @@ from rasa.nlu.extractors.extractor import EntityExtractorMixin
 from rasa.shared.nlu.training_data.message import Message
 from rasa.shared.nlu.constants import (
     TEXT,
-    TEXT_TOKENS,
-    ENTITY_ATTRIBUTE_TYPE,
-    ENTITY_ATTRIBUTE_START,
-    ENTITY_ATTRIBUTE_END,
-    ENTITY_ATTRIBUTE_VALUE,
-    ENTITIES,
+    # TEXT_TOKENS,
+    # ENTITY_ATTRIBUTE_TYPE,
+    # ENTITY_ATTRIBUTE_START,
+    # ENTITY_ATTRIBUTE_END,
+    # ENTITY_ATTRIBUTE_VALUE,
+    # ENTITIES,
 )
 
 logger = logging.getLogger(__name__)
@@ -57,6 +57,13 @@ class CustomEntityExtractor(GraphComponent):
         }
         self.minimum_confidence = config.get("minimumConfidence", 0.8)
         self.fuzzy_sets = {}
+        self.fuzzy_sets2 = {
+            "year" : FuzzySet(),
+            "term" : FuzzySet()
+        }
+        self.fuzzy_sets2["year"].add("ปี")
+        self.fuzzy_sets2["term"].add("เทอม")
+        self.fuzzy_sets2["term"].add("ภาค")
         self._get_entity_groups(self.dbConfig, self.queries)
         
     def train(self, training_data: TrainingData) -> Resource:
