@@ -107,6 +107,7 @@ class CustomEntityExtractor(GraphComponent):
     def match_entities(self, message: Message):
         extracted_entities = []
         tokens = message.get(TEXT)
+        current_entity = [0.0,""]
         from pythainlp import word_tokenize
         tokens = word_tokenize(message.get(TEXT),keep_whitespace=False)
         # print("Token = " + tokens)
@@ -129,13 +130,16 @@ class CustomEntityExtractor(GraphComponent):
                             for match in fuzzy_matches:
                                 if match[0] >= self.minimum_confidence:
                                     print(tokencurrent + " => Entity : " + match[1] + " with " + str(match[0]) + " confidence")
-                                    entity = {
-                                        "start": None,
-                                        "end": None,
-                                        "value": match[1],
-                                        "entity": entity_type,
-                                        "confidence": match[0],
-                                        "extractor": "ECTEntityExtractor"
-                                    }
-                                    extracted_entities.append(entity)    
+                                    if(match[0] > current_entity[0]):
+                                        current_entity[0] = match[0]
+                                        current_entity[1] = match[1]
+        entity = {
+            "start": None,
+            "end": None,
+            "value": match[1],
+            "entity": entity_type,
+            "confidence": match[0],
+            "extractor": "ECTEntityExtractor"
+        }
+        extracted_entities.append(entity)
         return extracted_entities
