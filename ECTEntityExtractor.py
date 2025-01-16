@@ -108,22 +108,35 @@ class CustomEntityExtractor(GraphComponent):
         extracted_entities = []
         tokens = message.get(TEXT)
         current_entity = [0.0,""]
+        current_entity_type = ""
         from pythainlp import word_tokenize
         tokens = word_tokenize(message.get(TEXT),keep_whitespace=False)
         # print("Token = " + tokens)
         # tokens = message.get(TEXT_TOKENS)
         if tokens is not None:
+            for token in range(len(tokens)):
+                for number_type in self.fuzzy_sets2.keys():
+                    match_number_type = self.fuzzy_sets2[number_type].get(tokens[token])
+                    if match_number_type is not None:
+                        for type_match in match_number_type:
+                            if type_match[0] > 0.8:
+                                for num in range(token+1,len(tokens)):
+                                    if(tokens[num].isdecimal()):
+                                        entity = {
+                                            "start": None,
+                                            "end": None,
+                                            "value": tokens[num],
+                                            "entity": number_type,
+                                            "confidence": type_match[0],
+                                            "extractor": "ECTEntityExtractor"
+                                        }
+                                        extracted_entities.append(entity)
+                                        break
+
             for tokenindex in range(len(tokens)):
                 tokencurrent = tokens[tokenindex]
                 for tokenindex2 in range(tokenindex + 1, len(tokens)):
                     tokencurrent += tokens[tokenindex2]
-                    # for Number_entity_type in self.fuzzy_sets2.keys():
-                    #     type_matches = self.fuzzy_sets2[Number_entity_type].get(tokencurrent)
-                    #     if type_matches is not None:
-                    #         for match in type_matches:
-                    #             if match[0] > 0.8:
-                    #                 pass
-
                     for entity_type in self.fuzzy_sets.keys():
                         fuzzy_matches = self.fuzzy_sets[entity_type].get(tokencurrent)
                         if fuzzy_matches is not None:
@@ -133,13 +146,16 @@ class CustomEntityExtractor(GraphComponent):
                                     if(match[0] > current_entity[0]):
                                         current_entity[0] = match[0]
                                         current_entity[1] = match[1]
-        entity = {
-            "start": None,
-            "end": None,
-            "value": match[1],
-            "entity": entity_type,
-            "confidence": match[0],
-            "extractor": "ECTEntityExtractor"
-        }
-        extracted_entities.append(entity)
+                                        current_entity_type = entity_type
+        
+        if current_entity != [0.0,""]:
+            entity = {
+                "start": None,
+                "end": None,
+                "value": current_entity[1],
+                "entity": current_entity_type,
+                "confidence": current_entity[0],
+                "extractor": "ECTEntityExtractor"
+            }
+            extracted_entities.append(entity)
         return extracted_entities
