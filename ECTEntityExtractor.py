@@ -127,7 +127,7 @@ class CustomEntityExtractor(GraphComponent):
                         fuzzy_matches = self.fuzzy_sets[entity_type].get(tokencurrent)
                         if fuzzy_matches is not None:
                             for match in fuzzy_matches:
-                                if match[0] > self.minimum_confidence:
+                                if match[0] >= self.minimum_confidence:
                                     print(tokencurrent + " => Entity : " + match[1] + " with " + str(match[0]) + " confidence")
                                     entity = {
                                         "start": None,
