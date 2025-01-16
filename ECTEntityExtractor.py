@@ -116,13 +116,19 @@ class CustomEntityExtractor(GraphComponent):
                 tokencurrent = tokens[tokenindex]
                 for tokenindex2 in range(tokenindex + 1, len(tokens)):
                     tokencurrent += tokens[tokenindex2]
-                    print(tokencurrent + "\n")
+                    # for Number_entity_type in self.fuzzy_sets2.keys():
+                    #     type_matches = self.fuzzy_sets2[Number_entity_type].get(tokencurrent)
+                    #     if type_matches is not None:
+                    #         for match in type_matches:
+                    #             if match[0] > 0.8:
+                    #                 pass
+
                     for entity_type in self.fuzzy_sets.keys():
                         fuzzy_matches = self.fuzzy_sets[entity_type].get(tokencurrent)
                         if fuzzy_matches is not None:
                             for match in fuzzy_matches:
                                 if match[0] > self.minimum_confidence:
-                                    print("Entity : " + match[1] + " => " + str(match[0]) + " confidence")
+                                    print(tokencurrent + " => Entity : " + match[1] + " with " + str(match[0]) + " confidence")
                                     entity = {
                                         "start": None,
                                         "end": None,
