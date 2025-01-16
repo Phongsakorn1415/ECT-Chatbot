@@ -61,18 +61,19 @@ class CustomEntityExtractor(GraphComponent):
             "ปี","ปีการศึกษา"
         ]
         termCheck = [
-            "เทอม","ภาค","ภาคการศึกษา"
+            "เทอม","ภาค","ภาคการศึกษา","ภาคเรียน"
         ]
 
         self.fuzzy_sets2 = {
             "year" : FuzzySet(),
             "term" : FuzzySet()
         }
+        self.number_minimum_confidence = 0.8
 
         for y in yearCheck:
             self.fuzzy_sets2["year"].add(y)
         for t in termCheck:
-            self.fuzzy_sets2["year"].add(t)
+            self.fuzzy_sets2["term"].add(t)
         self._get_entity_groups(self.dbConfig, self.queries)
         
     def train(self, training_data: TrainingData) -> Resource:
@@ -129,8 +130,8 @@ class CustomEntityExtractor(GraphComponent):
                     match_number_type = self.fuzzy_sets2[number_type].get(tokens[token])
                     if match_number_type is not None:
                         for type_match in match_number_type:
-                            print(tokens[token] + " => " + type_match[1] + " with " + str(type_match[0]) + " confidence")
-                            if type_match[0] > 0.8:
+                            print(tokens[token] + " => " + number_type + " : " + type_match[1] + " with " + str(type_match[0]) + " confidence")
+                            if type_match[0] > self.number_minimum_confidence:
                                 for num in range(token+1,len(tokens)):
                                     if(tokens[num].isdecimal()):
                                         entity = {

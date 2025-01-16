@@ -1,53 +1,4 @@
 {
-  "goodbye": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 18,
-    "confused_with": {}
-  },
-  "ask_term_late_fees": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4,
-    "confused_with": {}
-  },
-  "ask_teacher_teach": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 8,
-    "confused_with": {}
-  },
-  "ask_teacher_contact": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 22,
-    "confused_with": {}
-  },
-  "ask_term_price_one": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 16,
-    "confused_with": {}
-  },
-  "ask_subject_one_term": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 20,
-    "confused_with": {}
-  },
-  "ask_required_subject": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4,
-    "confused_with": {}
-  },
   "affirm": {
     "precision": 1.0,
     "recall": 1.0,
@@ -62,13 +13,6 @@
     "support": 25,
     "confused_with": {}
   },
-  "ask_subject_education_term": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 20,
-    "confused_with": {}
-  },
   "out_of_scope": {
     "precision": 1.0,
     "recall": 1.0,
@@ -76,25 +20,11 @@
     "support": 9,
     "confused_with": {}
   },
-  "deny": {
+  "ask_subject_education_term": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 15,
-    "confused_with": {}
-  },
-  "ask_elective_subject": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 5,
-    "confused_with": {}
-  },
-  "greet": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 32,
+    "support": 20,
     "confused_with": {}
   },
   "ask_teacher_all": {
@@ -104,6 +34,27 @@
     "support": 13,
     "confused_with": {}
   },
+  "ask_subject_one_term": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 20,
+    "confused_with": {}
+  },
+  "greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 32,
+    "confused_with": {}
+  },
+  "ask_required_subject": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
   "ask_subject_credit": {
     "precision": 1.0,
     "recall": 1.0,
@@ -111,11 +62,60 @@
     "support": 24,
     "confused_with": {}
   },
+  "ask_term_late_fees": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
   "ask_term_price_all": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 9,
+    "confused_with": {}
+  },
+  "goodbye": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 18,
+    "confused_with": {}
+  },
+  "ask_elective_subject": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "deny": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 15,
+    "confused_with": {}
+  },
+  "ask_term_price_one": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16,
+    "confused_with": {}
+  },
+  "ask_teacher_contact": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 22,
+    "confused_with": {}
+  },
+  "ask_teacher_teach": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
     "confused_with": {}
   },
   "accuracy": 1.0,
