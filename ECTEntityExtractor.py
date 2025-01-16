@@ -57,13 +57,22 @@ class CustomEntityExtractor(GraphComponent):
         }
         self.minimum_confidence = config.get("minimumConfidence", 0.8)
         self.fuzzy_sets = {}
+        yearCheck = [
+            "ปี","ปีการศึกษา"
+        ]
+        termCheck = [
+            "เทอม","ภาค","ภาคการศึกษา"
+        ]
+
         self.fuzzy_sets2 = {
             "year" : FuzzySet(),
             "term" : FuzzySet()
         }
-        self.fuzzy_sets2["year"].add("ปี")
-        self.fuzzy_sets2["term"].add("เทอม")
-        self.fuzzy_sets2["term"].add("ภาค")
+
+        for y in yearCheck:
+            self.fuzzy_sets2["year"].add(y)
+        for t in termCheck:
+            self.fuzzy_sets2["year"].add(t)
         self._get_entity_groups(self.dbConfig, self.queries)
         
     def train(self, training_data: TrainingData) -> Resource:
@@ -111,6 +120,7 @@ class CustomEntityExtractor(GraphComponent):
         current_entity_type = ""
         from pythainlp import word_tokenize
         tokens = word_tokenize(message.get(TEXT),keep_whitespace=False)
+        print(tokens)
         # print("Token = " + tokens)
         # tokens = message.get(TEXT_TOKENS)
         if tokens is not None:
@@ -119,6 +129,7 @@ class CustomEntityExtractor(GraphComponent):
                     match_number_type = self.fuzzy_sets2[number_type].get(tokens[token])
                     if match_number_type is not None:
                         for type_match in match_number_type:
+                            print(tokens[token] + " => " + type_match[1] + " with " + str(type_match[0]) + " confidence")
                             if type_match[0] > 0.8:
                                 for num in range(token+1,len(tokens)):
                                     if(tokens[num].isdecimal()):
