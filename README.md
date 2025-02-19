@@ -5,6 +5,7 @@ to make this project work you have to install (Windows)
 - pythainlp
 - spacy
 - mariadb
+- fuzzyset
 
 How to install Virtual Environment (optional)
   Use the command below to install virtual envaronment 
@@ -36,3 +37,8 @@ How to install mariadb
   Use the command below to install mariadb
   
     pip install mariadb
+
+How to install fuzzyset
+  Use the command below to install fuzzyset
+  
+    pip install fuzzyset
