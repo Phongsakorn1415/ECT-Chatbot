@@ -135,7 +135,9 @@ class ActionOneTermPrice(Action):
             INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
             WHERE course_year.year = '2565' AND education_year.year = ? AND education_year.term = ?"""
             results = DBFunc.DBfetch(sql,(year,term))
-            respon = "ปี " + str(results[0][0]) + " เทอม " + str(results[0][1]) + " ค่าเทอม " + str(results[0][2]) + " บาท  \nโดยแบ่งเป็น  \n" + results[0][3].replace("\n","  \n")
+            respon = "ปี " + str(results[0][0]) + " เทอม " + str(results[0][1]) + " ค่าเทอม " + str(results[0][2]) + " บาท"
+            if results[0][3] != '':
+                respon += "\nโดยแบ่งเป็น  \n" + results[0][3].replace("\n","  \n")
 
             DBFunc.insert_ask_answer_msg(
                 tracker.latest_message.get('text'), 
