@@ -18,6 +18,7 @@ intents:
   - ask_subject_language
   - ask_subject_credit
   - out_of_scope
+  - ask_subject_before
 
 entities:
   - year
@@ -53,6 +54,13 @@ slots:
     mappings:
       - type: from_entity
         entity: sname
+
+  courseYear:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: course_year
 
 responses:
   utter_greet:

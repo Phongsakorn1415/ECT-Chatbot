@@ -128,12 +128,20 @@ class CustomEntityExtractor(GraphComponent):
             for token in range(len(tokens)):
                 for number_type in self.fuzzy_sets2.keys():
                     match_number_type = self.fuzzy_sets2[number_type].get(tokens[token])
+                    # if match_number_type is not None and token+1 < len(tokens) and match_number_type[0][0] < self.number_minimum_confidence:
+                    #     match_number_type = self.fuzzy_sets2[number_type].get(tokens[token] + tokens[token+1])
+                    #     if match_number_type is not None:
+                    #         print("tokens+1 => " + tokens[token] + tokens[token+1] + ' with confident => ' + str(match_number_type[0][0]))
                     if match_number_type is not None:
                         for type_match in match_number_type:
-                            print(tokens[token] + " => " + number_type + " : " + type_match[1] + " with " + str(type_match[0]) + " confidence")
+                            # print(tokens[token] + " => " + number_type + " : " + type_match[1] + " with " + str(type_match[0]) + " confidence")
                             if type_match[0] > self.number_minimum_confidence:
                                 for num in range(token+1,len(tokens)):
-                                    if(tokens[num].isdecimal()):
+                                    isYear = self.fuzzy_sets2['year'].get(tokens[num])
+                                    if number_type is not 'year' and isYear is not None and isYear[0][0] > self.number_minimum_confidence:
+                                        print("isYear")
+                                        break
+                                    elif(tokens[num].isdecimal()):
                                         entity = {
                                             "start": None,
                                             "end": None,
@@ -142,8 +150,10 @@ class CustomEntityExtractor(GraphComponent):
                                             "confidence": type_match[0],
                                             "extractor": "ECTEntityExtractor"
                                         }
+                                        print(entity)
                                         extracted_entities.append(entity)
                                         break
+                            
 
             for tokenindex in range(len(tokens)):
                 tokencurrent = tokens[tokenindex]

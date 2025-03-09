@@ -561,6 +561,17 @@ class ActionSubjectCredit(Action):
             dispatcher.utter_message(text = "IN action_subject_credit\n ERROR => " + str(e))
         
         return []
+    
+class ActionSubjectLearnBefore(Action):
+    
+    def name(self) -> Text:
+        return "action_subject_learn_before"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        sname = next(tracker.get_latest_entity_values("sname"), None)
 
 class ActionFallBack(Action):
     
