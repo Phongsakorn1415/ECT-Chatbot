@@ -138,13 +138,17 @@ class CustomEntityExtractor(GraphComponent):
                             if type_match[0] > self.number_minimum_confidence:
                                 for num in range(token+1,len(tokens)):
                                     isYear = self.fuzzy_sets2['year'].get(tokens[num])
-                                    if number_type is not 'year' and isYear is not None and isYear[0][0] > self.number_minimum_confidence:
+                                    isTerm = self.fuzzy_sets2['term'].get(tokens[num])
+                                    if number_type is 'term' and isYear is not None and isYear[0][0] > self.number_minimum_confidence:
                                         print("isYear")
+                                        break
+                                    elif number_type is 'year' and isTerm is not None and isTerm[0][0] > self.number_minimum_confidence:
+                                        print("isTerm")
                                         break
                                     elif(tokens[num].isdecimal()):
                                         entity = {
-                                            "start": None,
-                                            "end": None,
+                                            "start": tokens.find(tokens[num]),
+                                            "end": tokens.find(tokens[num]) + len(tokens[num]),
                                             "value": tokens[num],
                                             "entity": number_type,
                                             "confidence": type_match[0],
@@ -169,11 +173,13 @@ class CustomEntityExtractor(GraphComponent):
                                         current_entity[0] = match[0]
                                         current_entity[1] = match[1]
                                         current_entity_type = entity_type
+                                        start = tokens.find(tokencurrent)
+                                        end = start + len(tokencurrent)
         
         if current_entity != [0.0,""]:
             entity = {
-                "start": None,
-                "end": None,
+                "start": start,
+                "end": end,
                 "value": current_entity[1],
                 "entity": current_entity_type,
                 "confidence": current_entity[0],
