@@ -26,7 +26,7 @@ from rasa.shared.nlu.constants import (
 logger = logging.getLogger(__name__)
 
 @DefaultV1Recipe.register(
-    DefaultV1Recipe.ComponentType.ENTITY_EXTRACTOR, is_trainable=False
+    DefaultV1Recipe.ComponentType.ENTITY_EXTRACTOR, is_trainable=True
 )
 class CustomEntityExtractor(GraphComponent):
     @classmethod
@@ -187,3 +187,12 @@ class CustomEntityExtractor(GraphComponent):
             }
             extracted_entities.append(entity)
         return extracted_entities
+    
+    def train(self, training_data: TrainingData) -> Resource:
+        # โหลดข้อมูลจาก DB และสร้าง fuzzy set
+        try:
+            self._get_entity_groups(self.dbConfig, self.queries)
+            logger.info("CustomEntityExtractor trained with fresh DB data.")
+        except Exception as e:
+            logger.error(f"Error during training: {e}")
+        return self.resource  # return the current resource
