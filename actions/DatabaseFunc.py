@@ -28,3 +28,25 @@ class DBFunc:
         conn.commit()
         cursor.close
         conn.close()
+
+    def get_course_year(target_year: str = None) -> str:
+        """
+        Get the appropriate course year from database.
+        If target_year is provided, returns the highest year that's less than or equal to target_year.
+        If target_year is None or no valid year found, returns the latest year in database.
+        """
+        conn = DBFunc.get_connection()
+        cursor = conn.cursor()
+        
+        if target_year:
+            # Get highest year <= target_year
+            cursor.execute("SELECT year FROM Course_Year WHERE year <= ? ORDER BY year DESC LIMIT 1", (target_year,))
+        else:
+            # Get latest year
+            cursor.execute("SELECT year FROM Course_Year ORDER BY year DESC LIMIT 1")
+        
+        result = cursor.fetchone()
+        cursor.close()
+        conn.close()
+        
+        return result[0] if result else None  # Default to None if no results
