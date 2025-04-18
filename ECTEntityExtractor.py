@@ -44,6 +44,7 @@ class CustomEntityExtractor(GraphComponent):
         model_storage: ModelStorage,
         resource: Resource,
     ) -> None:
+        self.resource = resource
         self.dbConfig = {
             "host" : "localhost",
             "user" : "root",
@@ -116,11 +117,11 @@ class CustomEntityExtractor(GraphComponent):
 
     def match_entities(self, message: Message):
         extracted_entities = []
-        tokens = message.get(TEXT)
+        msg = message.get(TEXT)
         current_entity = [0.0,""]
         current_entity_type = ""
         from pythainlp import word_tokenize
-        tokens = word_tokenize(message.get(TEXT),keep_whitespace=False)
+        tokens = word_tokenize(msg,keep_whitespace=False)
         print(tokens)
         # print("Token = " + tokens)
         # tokens = message.get(TEXT_TOKENS)
@@ -146,11 +147,17 @@ class CustomEntityExtractor(GraphComponent):
                                         print("isTerm")
                                         break
                                     elif(tokens[num].isdecimal()):
+                                        yearType = ""
+                                        if number_type is 'year':
+                                            if len(tokens[num]) != 4:
+                                                yearType = "year"
+                                            else:
+                                                yearType = "course_year"
                                         entity = {
-                                            "start": tokens.find(tokens[num]),
-                                            "end": tokens.find(tokens[num]) + len(tokens[num]),
+                                            "start": msg.find(tokens[num]),
+                                            "end": msg.find(tokens[num]) + len(tokens[num]),
                                             "value": tokens[num],
-                                            "entity": number_type,
+                                            "entity": number_type if number_type is 'term' else yearType,
                                             "confidence": type_match[0],
                                             "extractor": "ECTEntityExtractor"
                                         }
@@ -173,7 +180,7 @@ class CustomEntityExtractor(GraphComponent):
                                         current_entity[0] = match[0]
                                         current_entity[1] = match[1]
                                         current_entity_type = entity_type
-                                        start = tokens.find(tokencurrent)
+                                        start = msg.find(tokencurrent)
                                         end = start + len(tokencurrent)
         
         if current_entity != [0.0,""]:

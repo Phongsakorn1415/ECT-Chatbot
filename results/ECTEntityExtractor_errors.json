@@ -1,0 +1,1998 @@
+[
+  {
+    "text": "ค่าเทอมปี1เทอม1",
+    "entities": [
+      {
+        "start": 9,
+        "end": 10,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 14,
+        "end": 15,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 9,
+        "end": 10,
+        "value": "1",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 9,
+        "end": 10,
+        "value": "1",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี2เทอม2",
+    "entities": [
+      {
+        "start": 9,
+        "end": 10,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 14,
+        "end": 15,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 9,
+        "end": 10,
+        "value": "2",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 9,
+        "end": 10,
+        "value": "2",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี 1 เทอม 1",
+    "entities": [
+      {
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 17,
+        "end": 18,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี 2 เทอม 2",
+    "entities": [
+      {
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมปี หนึ่ง เทอม หนึ่ง",
+    "entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "หนึ่ง",
+        "entity": "year"
+      },
+      {
+        "start": 21,
+        "end": 26,
+        "value": "หนึ่ง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "ค่าเทอมปี หนึ่ง เทอม สอง",
+    "entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "หนึ่ง",
+        "entity": "year"
+      },
+      {
+        "start": 21,
+        "end": 24,
+        "value": "สอง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "ค่าเทอมปี สอง เทอม หนึ่ง",
+    "entities": [
+      {
+        "start": 10,
+        "end": 13,
+        "value": "สอง",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 24,
+        "value": "หนึ่ง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "ค่าเทอมปี สอง เทอม สอง",
+    "entities": [
+      {
+        "start": 10,
+        "end": 13,
+        "value": "สอง",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 22,
+        "value": "สอง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 18,
+        "value": "อินเทอร์เน็ตของสรรพสิ่ง",
+        "entity": "sname",
+        "confidence": 0.30434782608695654,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าลงทะเบียนเรียนปี2เทอม2",
+    "entities": [
+      {
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 24,
+        "end": 25,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมซัมเมอร์ปี2",
+    "entities": [
+      {
+        "start": 7,
+        "end": 15,
+        "value": "ซัมเมอร์",
+        "entity": "term"
+      },
+      {
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "entity": "year"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 0,
+        "end": 15,
+        "value": "ความปลอดภัยด้านไซเบอร์",
+        "entity": "sname",
+        "confidence": 0.36363636363636365,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ค่าเทอมsummerปี2",
+    "entities": [
+      {
+        "start": 7,
+        "end": 13,
+        "value": "summer",
+        "entity": "term"
+      },
+      {
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "entity": "year"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ช่องทางติดต่อ พงศกร",
+    "entities": [
+      {
+        "start": 14,
+        "end": 19,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 10,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.4545454545454546,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ช่องทางติดต่ออาจารย์ พงศกร",
+    "entities": [
+      {
+        "start": 21,
+        "end": 26,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 11,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.41666666666666663,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ติดต่อ พงศกร",
+    "entities": [
+      {
+        "start": 7,
+        "end": 12,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 10,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.4545454545454546,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ติดต่ออาจารย์พงศกร",
+    "entities": [
+      {
+        "start": 13,
+        "end": 18,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 6,
+        "end": 18,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.41666666666666663,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ติดต่อจารพงศกร",
+    "entities": [
+      {
+        "start": 9,
+        "end": 14,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 6,
+        "end": 14,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.625,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ติดต่อจารย์ พงศกร",
+    "entities": [
+      {
+        "start": 12,
+        "end": 17,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 9,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.5,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ติดต่อครู พงศกร",
+    "entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 7,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.625,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ช่องทางติดต่อครู พงศกร",
+    "entities": [
+      {
+        "start": 17,
+        "end": 22,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 7,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.625,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ช่องทางติดต่อจาร พงศกร",
+    "entities": [
+      {
+        "start": 17,
+        "end": 22,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 7,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.625,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ช่องทางติดต่อจาน พงศกร",
+    "entities": [
+      {
+        "start": 17,
+        "end": 22,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 7,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.625,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ติดต่อจาน พงศกร",
+    "entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 7,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.625,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "อาจารย์ พงศกร สอนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 8,
+        "end": 13,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 7,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.625,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "พงศกรสอนวิชาอะไรบ้าง",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.625,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาทั้งหมดที่อาจารย์ พงศกร สอน",
+    "entities": [
+      {
+        "start": 22,
+        "end": 27,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 7,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.625,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาที่ พงศกร สอน",
+    "entities": [
+      {
+        "start": 8,
+        "end": 13,
+        "value": "พงศกร",
+        "entity": "tname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 7,
+        "value": "พงศกร",
+        "entity": "tname",
+        "confidence": 0.625,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาเรียนปี1เทอม1",
+    "entities": [
+      {
+        "start": 11,
+        "end": 12,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 16,
+        "end": 17,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 11,
+        "end": 12,
+        "value": "1",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 11,
+        "end": 12,
+        "value": "1",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาเรียนปี2เทอม2",
+    "entities": [
+      {
+        "start": 11,
+        "end": 12,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 16,
+        "end": 17,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 11,
+        "end": 12,
+        "value": "2",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 11,
+        "end": 12,
+        "value": "2",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาเรียนปี 1 เทอม 1",
+    "entities": [
+      {
+        "start": 12,
+        "end": 13,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 20,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 12,
+        "end": 13,
+        "value": "1",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 12,
+        "end": 13,
+        "value": "1",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาเรียนปี 2 เทอม 2",
+    "entities": [
+      {
+        "start": 12,
+        "end": 13,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 12,
+        "end": 13,
+        "value": "2",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 12,
+        "end": 13,
+        "value": "2",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาที่เรียนใน1เทอม1",
+    "entities": [
+      {
+        "start": 14,
+        "end": 15,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 20,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 14,
+        "end": 15,
+        "value": "1",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาที่เรียนใน1เทอม2",
+    "entities": [
+      {
+        "start": 14,
+        "end": 15,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 19,
+        "end": 20,
+        "value": "2",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาที่เรียนใน 2 เทอม 1",
+    "entities": [
+      {
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 22,
+        "end": 23,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 22,
+        "end": 23,
+        "value": "1",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาที่เรียนใน 2 เทอม 2",
+    "entities": [
+      {
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 22,
+        "end": 23,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 15,
+        "end": 16,
+        "value": "2",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ปี 1 เทอม 1 เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 3,
+        "end": 4,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 3,
+        "end": 4,
+        "value": "1",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 3,
+        "end": 4,
+        "value": "1",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": -1,
+        "end": 20,
+        "value": "อินเทอร์เน็ตของสรรพสิ่ง",
+        "entity": "sname",
+        "confidence": 0.30434782608695654,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ปี 1 เทอม 2 เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 3,
+        "end": 4,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 3,
+        "end": 4,
+        "value": "1",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": -1,
+        "end": 20,
+        "value": "อินเทอร์เน็ตของสรรพสิ่ง",
+        "entity": "sname",
+        "confidence": 0.30434782608695654,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ปี 2 เทอม 1 เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 3,
+        "end": 4,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 3,
+        "end": 4,
+        "value": "2",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": -1,
+        "end": 20,
+        "value": "อินเทอร์เน็ตของสรรพสิ่ง",
+        "entity": "sname",
+        "confidence": 0.30434782608695654,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ปี 2 เทอม 2 เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 3,
+        "end": 4,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 3,
+        "end": 4,
+        "value": "2",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 3,
+        "end": 4,
+        "value": "2",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": -1,
+        "end": 20,
+        "value": "อินเทอร์เน็ตของสรรพสิ่ง",
+        "entity": "sname",
+        "confidence": 0.30434782608695654,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ปี1เทอม1เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 7,
+        "end": 8,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 0,
+        "end": 21,
+        "value": "อินเทอร์เน็ตของสรรพสิ่ง",
+        "entity": "sname",
+        "confidence": 0.30434782608695654,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ปี1เทอม2เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 7,
+        "end": 8,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 7,
+        "end": 8,
+        "value": "2",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 0,
+        "end": 21,
+        "value": "อินเทอร์เน็ตของสรรพสิ่ง",
+        "entity": "sname",
+        "confidence": 0.30434782608695654,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ปี2เทอม1เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 2,
+        "end": 3,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 7,
+        "end": 8,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 2,
+        "end": 3,
+        "value": "2",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 7,
+        "end": 8,
+        "value": "1",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 0,
+        "end": 21,
+        "value": "อินเทอร์เน็ตของสรรพสิ่ง",
+        "entity": "sname",
+        "confidence": 0.30434782608695654,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ปี2เทอม2เรียนอะไรบ้าง",
+    "entities": [
+      {
+        "start": 2,
+        "end": 3,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 7,
+        "end": 8,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 2,
+        "end": 3,
+        "value": "2",
+        "entity": "year",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 2,
+        "end": 3,
+        "value": "2",
+        "entity": "term",
+        "confidence": 1,
+        "extractor": "ECTEntityExtractor"
+      },
+      {
+        "start": 0,
+        "end": 21,
+        "value": "อินเทอร์เน็ตของสรรพสิ่ง",
+        "entity": "sname",
+        "confidence": 0.30434782608695654,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 เรียนเทอมไหน",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 เรียนปีไหน",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 เรียนเมื่อไหร่",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1 เรียนช่วงไหน",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1 เปิดสอนในเทอมใด",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 สอนในเทอมไหน",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1 เรียนปีการศึกษาใด",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชา การเขียนโปรแกรม ใช้ภาษาอะไรในการสอน",
+    "entities": [
+      {
+        "start": 5,
+        "end": 20,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 17,
+        "value": "การเขียนโปรแกรมเชิงวัตถุ",
+        "entity": "sname",
+        "confidence": 0.6666666666666667,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "การเขียนโปรแกรม เรียนด้วยภาษาไหน",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 19,
+        "value": "การเขียนโปรแกรมเชิงวัตถุ",
+        "entity": "sname",
+        "confidence": 0.6666666666666667,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 เรียนเป็นภาษาไทยหรือเปล่า",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1 สอนเป็นภาษาอะไร",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชา การเขียนโปรแกรม เรียนเป็นภาษาอังกฤษหรือไม่",
+    "entities": [
+      {
+        "start": 5,
+        "end": 20,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 19,
+        "value": "การเขียนโปรแกรมเชิงวัตถุ",
+        "entity": "sname",
+        "confidence": 0.6666666666666667,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1 สอนด้วยภาษาไทยไหม",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาการเขียนโปรแกรมใช้ภาษาอะไรในการสอน",
+    "entities": [
+      {
+        "start": 4,
+        "end": 19,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 4,
+        "end": 22,
+        "value": "การเขียนโปรแกรมเชิงวัตถุ",
+        "entity": "sname",
+        "confidence": 0.6666666666666667,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "การเขียนโปรแกรมเรียนด้วยภาษาไหน",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 0,
+        "end": 20,
+        "value": "การเขียนโปรแกรมเชิงวัตถุ",
+        "entity": "sname",
+        "confidence": 0.6666666666666667,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาโครงการพิเศษ 1เรียนเป็นภาษาไทยหรือเปล่า",
+    "entities": [
+      {
+        "start": 4,
+        "end": 18,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1สอนเป็นภาษาอะไร",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาการเขียนโปรแกรมเรียนเป็นภาษาอังกฤษหรือไม่",
+    "entities": [
+      {
+        "start": 4,
+        "end": 19,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 4,
+        "end": 24,
+        "value": "การเขียนโปรแกรมเชิงวัตถุ",
+        "entity": "sname",
+        "confidence": 0.6666666666666667,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1สอนด้วยภาษาไทยไหม",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชา การเขียนโปรแกรม มีหน่วยกิตเท่าไหร่",
+    "entities": [
+      {
+        "start": 5,
+        "end": 20,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 24,
+        "value": "การเขียนโปรแกรมเชิงวัตถุ",
+        "entity": "sname",
+        "confidence": 0.64,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 ได้หน่วยกิตกี่หน่วย",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชา โครงการพิเศษ 1 มีกี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 5,
+        "end": 19,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1 ได้กี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "หน่วยกิตของวิชา โครงการพิเศษ 1 มีกี่หน่วย",
+    "entities": [
+      {
+        "start": 16,
+        "end": 30,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาการเขียนโปรแกรมมีหน่วยกิตเท่าไหร่",
+    "entities": [
+      {
+        "start": 4,
+        "end": 19,
+        "value": "การเขียนโปรแกรม",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 4,
+        "end": 29,
+        "value": "การเขียนโปรแกรมเชิงวัตถุ",
+        "entity": "sname",
+        "confidence": 0.64,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาโครงการพิเศษ 1ได้หน่วยกิตกี่หน่วย",
+    "entities": [
+      {
+        "start": 4,
+        "end": 18,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "วิชาโครงการพิเศษ 1มีกี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 4,
+        "end": 18,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "โครงการพิเศษ 1ได้กี่หน่วยกิต",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "หน่วยกิตของวิชาโครงการพิเศษ 1มีกี่หน่วย",
+    "entities": [
+      {
+        "start": 15,
+        "end": 29,
+        "value": "โครงการพิเศษ 1",
+        "entity": "sname"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": -1,
+        "end": 12,
+        "value": "โครงงานพิเศษ 1",
+        "entity": "sname",
+        "confidence": 0.7857142857142857,
+        "extractor": "ECTEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "1+1 ได้เท่าไหร่",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "2 + 2 =",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 4,
+        "end": 5,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "2+หนึ่ง",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 2,
+        "end": 7,
+        "value": "หนึ่ง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "1-1 ได้เท่าไหร่",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "2 - 2 =",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 4,
+        "end": 5,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "2-หนึ่ง",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 2,
+        "end": 7,
+        "value": "หนึ่ง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "1*1 ได้เท่าไหร่",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "entity": "year"
+      },
+      {
+        "start": 2,
+        "end": 3,
+        "value": "1",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "2 * 2 =",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 4,
+        "end": 5,
+        "value": "2",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "2*หนึ่ง",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "entity": "year"
+      },
+      {
+        "start": 2,
+        "end": 7,
+        "value": "หนึ่ง",
+        "entity": "term"
+      }
+    ],
+    "predicted_entities": []
+  }
+]
