@@ -69,33 +69,40 @@ class ActionAllTermPrice(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            sql = """
-            SELECT course_year.year,education_year.year,education_year.term,educationfee.price,educationfee.per,educationfee.detail FROM educationfee
-            INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
-            INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
-            WHERE course_year.year = '2565' 
-            ORDER BY education_year.year,education_year.term"""
-            results = DBFunc.DBfetch(sql)
-            respon = "หลักสูตรปี "+ str(results[0][0]) +"  \n"
-            lastrespon = ""
-            for x in results:
-                if x[1] == 0:
-                    lastrespon = "ค่าปรับลงทะเบียนเรียนช้า " + str(x[3]) + " บาทต่อ" + x[4] + " " + str(x[5])
-                else:
-                    respon = respon + "ปีที่ " + str(x[1]) + " เทอมที่ " + str(x[2]) + " ค่าเทอม " + str(x[3]) + " บาท  \n"
+            user_course_year = next(tracker.get_latest_entity_values("course_year"), None)
+            course_year = DBFunc.get_course_year(user_course_year)
+            if course_year:
+                sql = """
+                SELECT course_year.year,education_year.year,education_year.term,educationfee.price,educationfee.per,educationfee.detail FROM educationfee
+                INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
+                INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
+                WHERE course_year.year = ?
+                ORDER BY education_year.year,education_year.term"""
+                results = DBFunc.DBfetch(sql,(course_year,))
+                respon = "หลักสูตรปี "+ str(results[0][0]) +"  \n"
+                lastrespon = ""
+                for x in results:
+                    if x[1] == 0:
+                        lastrespon = "ค่าปรับลงทะเบียนเรียนช้า " + str(x[3]) + " บาทต่อ" + x[4] + " " + str(x[5])
+                    else:
+                        respon = respon + "ปีที่ " + str(x[1]) + " เทอมที่ " + str(x[2]) + " ค่าเทอม " + str(x[3]) + " บาท  \n"
+                
+                respon += lastrespon
+                DBFunc.insert_ask_answer_msg(
+                    tracker.latest_message.get('text'), 
+                    respon,
+                    tracker.latest_message['intent'].get('name'), 
+                    tracker.latest_message['intent'].get('confidence')
+                )
+                dispatcher.utter_message(text = respon)
+            else:
+                dispatcher.utter_message(text = "ไม่พบข้อมูลของหลักสูตรปี " + user_course_year + " ค่ะ")
+
             
-            respon += lastrespon
-            DBFunc.insert_ask_answer_msg(
-                tracker.latest_message.get('text'), 
-                respon,
-                tracker.latest_message['intent'].get('name'), 
-                tracker.latest_message['intent'].get('confidence')
-            )
-            dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            # dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
-            dispatcher.utter_message(text = str(e))
+            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = str(e))
 
         return []
     
@@ -108,27 +115,9 @@ class ActionOneTermPrice(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        yearCheck = {
-            '1': '1',
-            '2': '2',
-            'หนึ่ง': '1',
-            'สอง': '2'
-        }
-
-        termCheck = {
-            '1': '1',
-            '2': '2',
-            'หนึ่ง': '1',
-            'สอง': '2',
-            'summer': '3',
-            'Summer': '3',
-            'ซัมเมอร์': '3',
-            'ซัมเมอ': '3'
-        }
-
         try:
-            year = yearCheck[next(tracker.get_latest_entity_values("year"), None)]
-            term = termCheck[next(tracker.get_latest_entity_values("term"), None)]
+            year = next(tracker.get_latest_entity_values("year"), None)
+            term = next(tracker.get_latest_entity_values("term"), None)
             
             sql = """SELECT education_year.year,education_year.term,educationfee.price,educationfee.detail FROM educationfee
             INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
