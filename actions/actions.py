@@ -31,7 +31,7 @@ class ActionAllTermPrice(Action):
         try:
             respon = ""
             user_course_year = next(tracker.get_latest_entity_values("course_year"), None)
-            course_year = DBFunc.get_course_year(user_course_year)
+            course_year = DBFunc.get_course_year(user_course_year) if user_course_year else DBFunc.get_course_year()
             if course_year:
                 sql = """
                 SELECT course_year.year,education_year.year,education_year.term,educationfee.price,educationfee.per,educationfee.detail FROM educationfee
@@ -59,7 +59,11 @@ class ActionAllTermPrice(Action):
                     dispatcher.utter_message(text = respon)
 
                 else:
-                    dispatcher.utter_message(text = f"ไม่พบข้อมูลค่าเทอมของหลักสูตรปี" + user_course_year + " ค่ะ")
+                    if user_course_year:
+                        dispatcher.utter_message(text = f"ไม่พบข้อมูลค่าเทอมของหลักสูตรปี" + user_course_year + " ค่ะ")
+                    else:
+                        dispatcher.utter_message(text = "ไม่พบข้อมูลค่าเทอมของหลักสูตรล่าสุดค่ะ")
+                    
                 
             else:
                 dispatcher.utter_message(text = "ไม่พบข้อมูลของหลักสูตรปี " + user_course_year + " ค่ะ")
