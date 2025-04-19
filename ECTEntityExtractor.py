@@ -56,14 +56,25 @@ class CustomEntityExtractor(GraphComponent):
             "tname" : "SELECT name FROM user WHERE role = 't';",
             "sname" : "SELECT name FROM subject;"
         }
+
+        summer_terms = [
+            "summer", "Summer", "SUMMER", "ซัมเมอร์", "ซัมเมอ", "ภาคฤดูร้อน", "ฤดูร้อน", "ภาคเรียนฤดูร้อน", "การศึกษาฤดูร้อน"
+        ]
+        
         self.minimum_confidence = config.get("minimumConfidence", 0.8)
-        self.fuzzy_sets = {}
+        self.fuzzy_sets = {
+            "summer" : FuzzySet()
+        }
+        for s in summer_terms:
+            self.fuzzy_sets["summer"].add(s)
+
         yearCheck = [
             "ปี","ปีการศึกษา"
         ]
         termCheck = [
             "เทอม","ภาค","ภาคการศึกษา","ภาคเรียน"
         ]
+
 
         self.fuzzy_sets2 = {
             "year" : FuzzySet(),
@@ -120,6 +131,8 @@ class CustomEntityExtractor(GraphComponent):
         msg = message.get(TEXT)
         current_entity = [0.0,""]
         current_entity_type = ""
+        start = 0
+        end = 0
         from pythainlp import word_tokenize
         tokens = word_tokenize(msg,keep_whitespace=False)
         print(tokens)
@@ -129,13 +142,8 @@ class CustomEntityExtractor(GraphComponent):
             for token in range(len(tokens)):
                 for number_type in self.fuzzy_sets2.keys():
                     match_number_type = self.fuzzy_sets2[number_type].get(tokens[token])
-                    # if match_number_type is not None and token+1 < len(tokens) and match_number_type[0][0] < self.number_minimum_confidence:
-                    #     match_number_type = self.fuzzy_sets2[number_type].get(tokens[token] + tokens[token+1])
-                    #     if match_number_type is not None:
-                    #         print("tokens+1 => " + tokens[token] + tokens[token+1] + ' with confident => ' + str(match_number_type[0][0]))
                     if match_number_type is not None:
                         for type_match in match_number_type:
-                            # print(tokens[token] + " => " + number_type + " : " + type_match[1] + " with " + str(type_match[0]) + " confidence")
                             if type_match[0] > self.number_minimum_confidence:
                                 for num in range(token+1,len(tokens)):
                                     isYear = self.fuzzy_sets2['year'].get(tokens[num])
@@ -176,6 +184,17 @@ class CustomEntityExtractor(GraphComponent):
                             for match in fuzzy_matches:
                                 if match[0] >= self.minimum_confidence:
                                     print(tokencurrent + " => Entity : " + match[1] + " with " + str(match[0]) + " confidence")
+                                    if entity_type == 'summer':
+                                        entity = {
+                                            "start": msg.find(tokencurrent),
+                                            "end": msg.find(tokencurrent) + len(tokencurrent),
+                                            "value": "3",  # Summer is always term 3
+                                            "entity": "term",  # Map summer to term entity
+                                            "confidence": match[0],
+                                            "extractor": "ECTEntityExtractor"
+                                        }
+                                        extracted_entities.append(entity)
+                                        continue
                                     if(match[0] > current_entity[0]):
                                         current_entity[0] = match[0]
                                         current_entity[1] = match[1]
