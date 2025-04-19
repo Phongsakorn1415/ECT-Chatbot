@@ -165,7 +165,7 @@ class CustomEntityExtractor(GraphComponent):
                                             "start": msg.find(tokens[num]),
                                             "end": msg.find(tokens[num]) + len(tokens[num]),
                                             "value": tokens[num],
-                                            "entity": number_type if number_type is 'term' else yearType,
+                                            "entity": number_type if number_type is not 'year' else yearType,
                                             "confidence": type_match[0],
                                             "extractor": "ECTEntityExtractor"
                                         }

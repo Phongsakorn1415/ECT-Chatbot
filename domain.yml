@@ -25,6 +25,7 @@ entities:
   - term
   - tname
   - sname
+  - course_year
 
 slots:
   educationYear:

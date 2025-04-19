@@ -29,7 +29,7 @@ class DBFunc:
         cursor.close
         conn.close()
 
-    def get_course_year(target_year: str = None) -> str:
+    def get_course_year(target_year: str | None) -> str:
         # Get the appropriate course year from database.
         # If target_year is provided, returns the highest year that's less than or equal to target_year.
         # If target_year is None or no valid year found, returns the latest year in database.

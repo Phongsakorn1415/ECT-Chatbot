@@ -1,56 +1,3 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
-
-
-# This is a simple example for a custom action which utters "Hello World!"
-
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
-
-
-# def dataFetch(command):
-#     myDB=mysql.connector.conect(
-#         host="localhost", 
-#         user="root", 
-#         passwd="", 
-#         database="ect_chatbot"
-#     )
-
-#     mycursor = mydb.cursor() 
-#     sql = command
-
-#     try:
-#         #Execute the SQL Query
-#         mycursor.execute(sql) 
-#         results = mycursor.fetchall()
-
-#         UserName = results[0][0]
-#         UserEmail = results[0][2]
-
-#         #Now print fetched data
-#         dispatcher.utter_message(f"User Name: {UserName}, User Email: {UserEmail}")
-
-#     except:
-#         dispatcher.utter_message("Error : Unable to fetch data.")
 from rasa_sdk.types import DomainDict
 import json
 from .DatabaseFunc import DBFunc
@@ -58,6 +5,19 @@ from typing import Any, Coroutine, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
+
+                    # buttons = []
+                    # for x in results:
+                    #     title = f"{x[0]}"
+                    #     payload = "/ask_term_price_one{{'course_year': '" + str(x[0]) + "'}"
+                    #     if year:
+                    #         payload = payload + ",{'year':'" + year +"'}"
+                    #     if term:
+                    #         payload = payload + ",{'term':'" + term +"'}"
+                    #     payload = payload + "}"
+                    #     buttons.append({"title": title, "payload": payload})
+                    # dispatcher.utter_message(text="กรุณาเลือกปีของหลักสูตร", buttons=buttons)
+                    # return []
 
 class ActionAllTermPrice(Action):
 
@@ -69,6 +29,7 @@ class ActionAllTermPrice(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
+            respon = ""
             user_course_year = next(tracker.get_latest_entity_values("course_year"), None)
             course_year = DBFunc.get_course_year(user_course_year)
             if course_year:
@@ -79,30 +40,35 @@ class ActionAllTermPrice(Action):
                 WHERE course_year.year = ?
                 ORDER BY education_year.year,education_year.term"""
                 results = DBFunc.DBfetch(sql,(course_year,))
-                respon = "หลักสูตรปี "+ str(results[0][0]) +"  \n"
-                lastrespon = ""
-                for x in results:
-                    if x[1] == 0:
-                        lastrespon = "ค่าปรับลงทะเบียนเรียนช้า " + str(x[3]) + " บาทต่อ" + x[4] + " " + str(x[5])
-                    else:
-                        respon = respon + "ปีที่ " + str(x[1]) + " เทอมที่ " + str(x[2]) + " ค่าเทอม " + str(x[3]) + " บาท  \n"
+                if results:
+                    respon = "หลักสูตรปี "+ str(results[0][0]) +"  \n"
+                    lastrespon = ""
+                    for x in results:
+                        if x[1] == 0:
+                            lastrespon = "ค่าปรับลงทะเบียนเรียนช้า " + str(x[3]) + " บาทต่อ" + x[4] + " " + str(x[5])
+                        else:
+                            respon = respon + "ปีที่ " + str(x[1]) + " เทอมที่ " + str(x[2]) + " ค่าเทอม " + str(x[3]) + " บาท  \n"
+                    
+                    respon += lastrespon
+                    DBFunc.insert_ask_answer_msg(
+                        tracker.latest_message.get('text'), 
+                        respon,
+                        tracker.latest_message['intent'].get('name'), 
+                        tracker.latest_message['intent'].get('confidence')
+                    )
+                    dispatcher.utter_message(text = respon)
+
+                else:
+                    dispatcher.utter_message(text = f"ไม่พบข้อมูลค่าเทอมของหลักสูตรปี" + user_course_year + " ค่ะ")
                 
-                respon += lastrespon
-                DBFunc.insert_ask_answer_msg(
-                    tracker.latest_message.get('text'), 
-                    respon,
-                    tracker.latest_message['intent'].get('name'), 
-                    tracker.latest_message['intent'].get('confidence')
-                )
-                dispatcher.utter_message(text = respon)
             else:
                 dispatcher.utter_message(text = "ไม่พบข้อมูลของหลักสูตรปี " + user_course_year + " ค่ะ")
 
             
 
         except Exception as e:
-            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
-            # dispatcher.utter_message(text = str(e))
+            # dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            dispatcher.utter_message(text = "action_term_price_all error : "+str(e))
 
         return []
     
@@ -138,7 +104,7 @@ class ActionOneTermPrice(Action):
 
         except Exception as e:
             # dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
-            dispatcher.utter_message(text = str(e))
+            dispatcher.utter_message(text = "action_term_price_one error : "+str(e))
 
         return []
     
