@@ -6,19 +6,6 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
-                    # buttons = []
-                    # for x in results:
-                    #     title = f"{x[0]}"
-                    #     payload = "/ask_term_price_one{{'course_year': '" + str(x[0]) + "'}"
-                    #     if year:
-                    #         payload = payload + ",{'year':'" + year +"'}"
-                    #     if term:
-                    #         payload = payload + ",{'term':'" + term +"'}"
-                    #     payload = payload + "}"
-                    #     buttons.append({"title": title, "payload": payload})
-                    # dispatcher.utter_message(text="กรุณาเลือกปีของหลักสูตร", buttons=buttons)
-                    # return []
-
 class ActionAllTermPrice(Action):
 
     def name(self) -> Text:
@@ -71,8 +58,8 @@ class ActionAllTermPrice(Action):
             
 
         except Exception as e:
-            # dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
-            dispatcher.utter_message(text = "action_term_price_all error : "+str(e))
+            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = "action_term_price_all error : "+str(e))
 
         return []
     
@@ -86,29 +73,64 @@ class ActionOneTermPrice(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
+            respon = ""
             year = next(tracker.get_latest_entity_values("year"), None)
             term = next(tracker.get_latest_entity_values("term"), None)
-            
-            sql = """SELECT education_year.year,education_year.term,educationfee.price,educationfee.detail FROM educationfee
-            INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
-            INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
-            WHERE course_year.year = '2565' AND education_year.year = ? AND education_year.term = ?"""
-            results = DBFunc.DBfetch(sql,(year,term))
-            respon = "ปี " + str(results[0][0]) + " เทอม " + str(results[0][1]) + " ค่าเทอม " + str(results[0][2]) + " บาท"
-            if results[0][3] != '':
-                respon += "\nโดยแบ่งเป็น  \n" + results[0][3].replace("\n","  \n")
+            user_course_year = next(tracker.get_latest_entity_values("course_year"), None)
+            course_year = DBFunc.get_course_year(user_course_year) if user_course_year else DBFunc.get_course_year()
 
-            DBFunc.insert_ask_answer_msg(
-                tracker.latest_message.get('text'), 
-                respon,
-                tracker.latest_message['intent'].get('name'), 
-                tracker.latest_message['intent'].get('confidence')
-            )
-            dispatcher.utter_message(text = respon)
+            if course_year:
+            
+                if not year and term:
+                    sql = "SELECT year FROM education_year where term = ? ORDER BY year"
+                    results = DBFunc.DBfetch(sql,(term,))
+                    buttons = []
+                    for x in results:
+                        title = f"ปีการศึกษาที่ {str(x[0])}"
+                        payload = '/ask_term_price_one' + json.dumps({'course_year': course_year, 'year': str(x[0]), 'term': term})
+                        buttons.append({"title": title, "payload": payload})
+                    dispatcher.utter_message(text="กรุณาเลือกปีการศึกษา", buttons=buttons)
+                    # dispatcher.utter_message(text="กรุณาระบุปีการศึกษา")
+                    return []
+                
+                elif year and not term:
+                    sql = "SELECT term FROM education_year where year = ? ORDER BY term"
+                    results = DBFunc.DBfetch(sql,(year,))
+                    buttons = []
+                    for x in results:
+                        title = f"ภาคการศึกษาที่ {str(x[0])}"
+                        payload = '/ask_term_price_one' + json.dumps({'course_year': course_year, 'year': year, 'term': str(x[0])})
+                        buttons.append({"title": title, "payload": payload})
+                    dispatcher.utter_message(text="กรุณาเลือกภาคการศึกษา", buttons=buttons)
+                    # dispatcher.utter_message(text="กรุณาระบุภาคการศึกษา")
+                    return []
+
+                sql = """SELECT education_year.year,education_year.term,educationfee.price,educationfee.detail FROM educationfee
+                INNER JOIN education_year ON (educationfee.educationyear_id = education_year.id)
+                INNER JOIN course_year ON (educationfee.courseyear_id = course_year.id)
+                WHERE course_year.year = ? AND education_year.year = ? AND education_year.term = ?"""
+                results = DBFunc.DBfetch(sql,(course_year,year,term))
+                if not results:
+                    dispatcher.utter_message(text = "ไม่พบข้อมูลค่ะ")
+                    return []
+                respon = "ปี " + str(results[0][0]) + ((" เทอม " + str(results[0][1])) if results[0][1] != 3 else " ภาคเรียนฤดูร้อน") + " ค่าเทอม " + str(results[0][2]) + " บาท"
+                if results[0][3] != '':
+                    respon += "\nโดยแบ่งเป็น  \n" + results[0][3].replace("\n","  \n")
+
+                DBFunc.insert_ask_answer_msg(
+                    tracker.latest_message.get('text'), 
+                    respon,
+                    tracker.latest_message['intent'].get('name'), 
+                    tracker.latest_message['intent'].get('confidence')
+                )
+                dispatcher.utter_message(text = respon)
+
+            else:
+                dispatcher.utter_message(text = "ไม่พบข้อมูลของหลักสูตรปี " + user_course_year + " ค่ะ")
 
         except Exception as e:
-            # dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
-            dispatcher.utter_message(text = "action_term_price_one error : "+str(e))
+            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = "action_term_price_one error : "+str(e))
 
         return []
     
@@ -138,8 +160,8 @@ class ActionLateFees(Action):
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            # dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
-            dispatcher.utter_message(text = str(e))
+            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = str(e))
 
         return []
     
