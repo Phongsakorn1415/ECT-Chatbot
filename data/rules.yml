@@ -72,6 +72,16 @@ rules:
   - intent: ask_subject_credit
   - action: action_subject_credit
 
+- rule: Answer what subjects follow before a specific subject
+  steps:
+  - intent: ask_subject_before
+  - action: action_subject_before
+
+- rule: Answer what subjects follow after a specific subject
+  steps:
+  - intent: ask_subject_after
+  - action: action_subject_after
+
 - rule: Fall Back
   steps:
   - intent: nlu_fallback

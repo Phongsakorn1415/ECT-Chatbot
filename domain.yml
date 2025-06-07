@@ -17,8 +17,9 @@ intents:
   - ask_subject_education_term
   - ask_subject_language
   - ask_subject_credit
-  - out_of_scope
   - ask_subject_before
+  - ask_subject_after
+  - out_of_scope
 
 entities:
   - year
@@ -87,6 +88,8 @@ actions:
   - action_subject_language
   - action_subject_credit
   - action_fallback
+  - action_subject_before
+  - action_subject_after
 
 session_config:
   session_expiration_time: 60

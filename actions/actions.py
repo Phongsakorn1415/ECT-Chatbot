@@ -546,13 +546,101 @@ class ActionSubjectCredit(Action):
 class ActionSubjectLearnBefore(Action):
     
     def name(self) -> Text:
-        return "action_subject_learn_before"
+        return "action_subject_before"
     
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         sname = next(tracker.get_latest_entity_values("sname"), None)
+        
+        try:
+            if not sname:
+                dispatcher.utter_message(text="ขออภัยค่ะ กรุณาระบุชื่อวิชาที่ต้องการตรวจสอบด้วยค่ะ")
+                return []
+                
+            # Get the prerequisite subject ID for the requested subject
+            sql = """SELECT s1.name, s1.id, s2.name as prerequisite_name 
+                     FROM subject s1
+                     LEFT JOIN subject s2 ON s1.subject_before_id = s2.id
+                     WHERE s1.name = ? AND s1.subject_before_id IS NOT NULL"""
+            results = DBFunc.DBfetch(sql, (sname,))
+            
+            if not results:
+                # Check if subject exists but has no prerequisites
+                check_sql = "SELECT id FROM subject WHERE name = ?"
+                subject_exists = DBFunc.DBfetch(check_sql, (sname,))
+                
+                if subject_exists:
+                    respon = f"วิชา {sname} ไม่มีวิชาที่ต้องเรียนก่อนค่ะ"
+                else:
+                    respon = f"ไม่พบข้อมูลวิชา {sname} ค่ะ กรุณาตรวจสอบชื่อวิชาอีกครั้ง"
+            else:
+                respon = f"วิชา {results[0][0]} ต้องเรียนวิชา {results[0][2]} มาก่อนค่ะ"
+            
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
+            dispatcher.utter_message(text=respon)
+            
+        except Exception as e:
+            dispatcher.utter_message(text="เกิดข้อผิดพลาดในการค้นหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text="IN action_subject_before\n ERROR => " + str(e))
+        
+        return []
+
+class ActionSubjectLearnAfter(Action):
+    
+    def name(self) -> Text:
+        return "action_subject_after"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        sname = next(tracker.get_latest_entity_values("sname"), None)
+        
+        try:
+            if not sname:
+                dispatcher.utter_message(text="ขออภัยค่ะ กรุณาระบุชื่อวิชาที่ต้องการตรวจสอบด้วยค่ะ")
+                return []
+                
+            # First get the ID of the subject
+            id_sql = "SELECT id FROM subject WHERE name = ?"
+            subject_id = DBFunc.DBfetch(id_sql, (sname,))
+            
+            if not subject_id:
+                dispatcher.utter_message(text=f"ไม่พบข้อมูลวิชา {sname} ค่ะ กรุณาตรวจสอบชื่อวิชาอีกครั้ง")
+                return []
+                
+            # Find subjects that have this subject as a prerequisite
+            sql = """SELECT name FROM subject 
+                     WHERE subject_before_id = ?"""
+            results = DBFunc.DBfetch(sql, (subject_id[0][0],))
+            
+            if not results:
+                respon = f"ไม่มีวิชาที่ต้องเรียน {sname} มาก่อนค่ะ"
+            else:
+                respon = f"หลังจากเรียนวิชา {sname} แล้วสามารถเรียนวิชาต่อไปนี้ได้ค่ะ  \n"
+                for i, subject in enumerate(results, 1):
+                    respon += f"{i}. {subject[0]}  \n"
+            
+            DBFunc.insert_ask_answer_msg(
+                tracker.latest_message.get('text'), 
+                respon,
+                tracker.latest_message['intent'].get('name'), 
+                tracker.latest_message['intent'].get('confidence')
+            )
+            dispatcher.utter_message(text=respon)
+            
+        except Exception as e:
+            dispatcher.utter_message(text="เกิดข้อผิดพลาดในการค้นหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text="IN action_subject_after\n ERROR => " + str(e))
+        
+        return []
 
 class ActionFallBack(Action):
     
