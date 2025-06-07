@@ -190,7 +190,8 @@ class ActionTeacherAll(Action):
             dispatcher.utter_message(text = respon)
         
         except Exception as e:
-            dispatcher.utter_message(text = str(e))
+            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = str(e))
 
         return []
 
@@ -239,7 +240,8 @@ class ActionTeacherContact(Action):
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            dispatcher.utter_message(text = str(e))
+            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = str(e))
 
         return []
     
@@ -277,7 +279,8 @@ class ActionTeacherTeach(Action):
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            dispatcher.utter_message(text = str(e))
+            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = str(e))
         
         return []
 
@@ -321,7 +324,8 @@ class ActionRequiredSubject(Action):
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            dispatcher.utter_message(text = "action_required_subject\n" + str(e))
+            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = "action_required_subject\n" + str(e))
         
         return []
             
@@ -355,7 +359,8 @@ class ActionElectiveSubject(Action):
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            dispatcher.utter_message(text = "action_required_subject\n" + str(e))
+            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = "action_required_subject\n" + str(e))
 
         return []
     
@@ -411,7 +416,8 @@ class ActionSubjectOneTerm(Action):
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            dispatcher.utter_message(text = "action_subject_one_term\n" + str(e))
+            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = "action_subject_one_term\n" + str(e))
         
         return []
     
@@ -456,7 +462,8 @@ class ActionSubjectEducationTerm(Action):
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            dispatcher.utter_message(text = "IN action_subject_education_term\n ERROR => " + str(e))
+            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = "IN action_subject_education_term\n ERROR => " + str(e))
         
         return []
     
@@ -500,7 +507,8 @@ class ActionSubjectLanguage(Action):
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            dispatcher.utter_message(text = "IN action_subject_language\n ERROR => " + str(e))
+            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = "IN action_subject_language\n ERROR => " + str(e))
         
         return []
     
@@ -539,7 +547,8 @@ class ActionSubjectCredit(Action):
             dispatcher.utter_message(text = respon)
 
         except Exception as e:
-            dispatcher.utter_message(text = "IN action_subject_credit\n ERROR => " + str(e))
+            dispatcher.utter_message(text = "เกิดข้อผิดพลาดในการหาข้อมูล กรุณาลองใหม่อีกครั้ง")
+            # dispatcher.utter_message(text = "IN action_subject_credit\n ERROR => " + str(e))
         
         return []
     
@@ -680,7 +689,7 @@ class ActionFallBack(Action):
             
             dispatcher.utter_message(text = "ขออภัยค่ะ ฉันไม่สามารถตอบคำถามของคุณได้  \nหากพิมพ์ผิด กรุณาพิมพ์ใหม่ได้ไหมคะ")
         except Exception as e:
-            # dispatcher.utter_message(text = "ขออภัยค่ะ ฉันไม่สามารถตอบคำถามของคุณได้  \nหากพิมพ์ผิด กรุณาพิมพ์ใหม่ได้ไหมคะ")
-            dispatcher.utter_message(text = str(e))
+            dispatcher.utter_message(text = "ขออภัยค่ะ ฉันไม่สามารถตอบคำถามของคุณได้  \nหากพิมพ์ผิด กรุณาพิมพ์ใหม่ได้ไหมคะ")
+            # dispatcher.utter_message(text = str(e))
         
         return []
